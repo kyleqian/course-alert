@@ -95,19 +95,20 @@ module XmlHelper
 
     puts "Writing to Dropbox..."
     self.write_to_dp("XMLs/#{filename}.xml", xml_file)
+    puts "Done writing!"
 
-    puts "Parsing with Nokogiri..."
-    soup = Nokogiri::XML(xml_file)
-    courses = soup.css('course')
-    puts "#{courses.length} courses collected"
+    # puts "Parsing with Nokogiri..."
+    # soup = Nokogiri::XML(xml_file)
+    # courses = soup.css('course')
+    # puts "#{courses.length} courses collected"
 
-    parsed_courses = []
-    courses.each_with_index do |c, i|
-      parsed_courses.append(self.parse_course(c))
-      puts "Parsing XML: #{i} objects parsed"
-    end
+    # parsed_courses = []
+    # parsed_courses = courses.each_with_index do |c, i|
+    #   parsed_courses.append(self.parse_course(c))
+    #   puts "Parsing XML: #{i} objects parsed"
+    # end
 
-    puts "Done parsing!"
-    return parsed_courses
+    # puts "Done parsing!"
+    # return parsed_courses
   end
 end
