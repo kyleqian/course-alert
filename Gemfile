@@ -30,6 +30,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Use MongoDB for course info storage
 gem 'mongo', '~> 2.2'
+# Nokogiri for XML parsing
+gem 'nokogiri'
+# Dropbox SDK
+gem 'dropbox-sdk'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
