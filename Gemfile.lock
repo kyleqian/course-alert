@@ -39,7 +39,6 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.0)
-    bson (4.1.1)
     builder (3.2.2)
     byebug (9.0.5)
     coffee-rails (4.2.1)
@@ -80,8 +79,6 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
-    mongo (2.2.7)
-      bson (~> 4.0)
     multi_json (1.12.1)
     nio4r (1.2.1)
     nokogiri (1.6.8)
@@ -168,7 +165,6 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
-  mongo (~> 2.2)
   nokogiri
   pg (~> 0.18)
   puma (~> 3.0)

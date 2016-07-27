@@ -28,8 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Use MongoDB for course info storage
-gem 'mongo', '~> 2.2'
+
 # Nokogiri for XML parsing
 gem 'nokogiri'
 # Dropbox SDK
