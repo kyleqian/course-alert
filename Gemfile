@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'nokogiri'
 # Dropbox SDK
 gem 'dropbox-sdk'
+# YAML configuration file
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

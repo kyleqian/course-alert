@@ -5,7 +5,6 @@ require 'time'
 require 'json'
 
 class MainToolkit
-  DP_KEY = 'Pu-hL21vvKwAAAAAAACQwGq902w2bxE3yw8TwMphQDdZK4r9_KuZS4QKwaanBI1c'.freeze
   QUARTERS_HASH = {
     "AUTUMN" => 1,
     "FALL" => 1,
@@ -15,7 +14,7 @@ class MainToolkit
   }.freeze
 
   def initialize
-    @dp_client = DropboxClient.new(DP_KEY)
+    @dp_client = DropboxClient.new(Figaro.env.dp_key)
   end
 
   # Saves latest EC XML into Dropbox
