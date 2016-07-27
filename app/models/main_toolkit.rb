@@ -4,7 +4,7 @@ require 'set'
 require 'time'
 require 'json'
 
-class XmlToolkit
+class MainToolkit
   DP_KEY = 'Pu-hL21vvKwAAAAAAACQwGq902w2bxE3yw8TwMphQDdZK4r9_KuZS4QKwaanBI1c'.freeze
   QUARTERS_HASH = {
     "AUTUMN" => 1,
