@@ -8,7 +8,6 @@
     <div class="form-section email-section">
       <%= f.input :email,
         placeholder: 'name@stanford.edu',
-        label: 'Email',
         class: 'form-control',
         required: ''
       %>
@@ -17,6 +16,9 @@
     <div class="form-section subject-settings-section">
       <%= f.input :subject_settings,
         class: 'form-control',
+        collection: UrlHelper.get_formatted_departments,
+        input_html: { multiple: true },
+        as: :check_boxes,
         required: ''
       %>
     </div>

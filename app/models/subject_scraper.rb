@@ -21,6 +21,8 @@ listing.each do |l|
   end
 end
 
+# TODO: I'm currently manually deleting some of the last elements
+
 filename = "departments~#{Time.now.iso8601.split('.')[0].gsub(':', '-')}"
 File.open("#{filename}.json", "w") do |f|
   f.write(JSON.pretty_generate(parsed_listing))

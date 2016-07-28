@@ -1013,37 +1013,5 @@
         "default": true
       }
     ]
-  },
-  {
-    "school": "Stanford Continuing Studies",
-    "departments": [
-      {
-        "name": "Master of Liberal Arts",
-        "code": "MLA",
-        "default": true
-      }
-    ]
-  },
-  {
-    "school": "Undergraduate General Education Requirements",
-    "departments": [
-
-    ]
-  },
-  {
-    "school": "Cardinal Service",
-    "departments": [
-
-    ]
-  },
-  {
-    "school": "More Course Lists",
-    "departments": [
-      {
-        "name": "Sophomore College Courses",
-        "code": "SCS",
-        "default": true
-      }
-    ]
   }
 ]

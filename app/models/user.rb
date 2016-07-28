@@ -13,7 +13,6 @@
 #
 
 class User < ApplicationRecord
-  store :subject_settings
   before_create :create_public_id, :preprocess_user
   validates :email, presence: true
   validates :subject_settings, presence: true

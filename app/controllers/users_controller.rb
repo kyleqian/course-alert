@@ -4,11 +4,17 @@ class UsersController < ApplicationController
   end
 
   def submit
-    @user = User.new(params[:user].require(:email, :subject_settings))
+    @user = User.new(user_params)
     puts @user.inspect
   end
 
   def login
     
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:email, subject_settings: [])
   end
 end
