@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def admin?
-    true
+    false
   end
 
   def authorize
