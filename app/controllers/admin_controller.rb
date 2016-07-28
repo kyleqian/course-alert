@@ -5,9 +5,5 @@ class AdminController < ApplicationController
   end
 
   def run
-    toolkit = MainToolkit.new
-    toolkit.download_latest_xml()
-    puts '======================'
-    toolkit.create_latest_diff()
   end
 end
