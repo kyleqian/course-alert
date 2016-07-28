@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
+    params[:user][:subject_settings].reject!(&:empty?)
     params.require(:user).permit(:email, subject_settings: [])
   end
 end

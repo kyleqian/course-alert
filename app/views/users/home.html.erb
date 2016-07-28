@@ -14,12 +14,23 @@
     </div>
 
     <div class="form-section subject-settings-section">
-      <%= f.input :subject_settings,
+
+      <% UrlHelper.get_departments.each do |school| %>
+        <%= f.input :subject_settings,
+          class: 'form-control',
+          collection: Hash[school['departments'].collect { |d| ["#{d['name']} (#{d['code']})", "#{d['code']}"] }],
+          label: school['school'],
+          input_html: { multiple: true },
+          as: :check_boxes
+        %>
+      <% end %>
+
+
+      <%#= f.input :subject_settings,
         class: 'form-control',
         collection: UrlHelper.get_formatted_departments,
         input_html: { multiple: true },
-        as: :check_boxes,
-        required: ''
+        as: :check_boxes
       %>
     </div>
 

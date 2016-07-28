@@ -41,13 +41,8 @@ module UrlHelper
   ACADEMIC_YEAR = "20162017"
   QUERY = "all+courses"
 
-  def self.get_formatted_departments
-    raw_d_hash = JSON.parse(File.read('app/models/departments~2016-07-28T01-31-23-07-00.json'))
-    d_array = []
-    raw_d_hash.each do |school|
-      school["departments"].each { |d| d_array << d["code"] }
-    end
-    return d_array
+  def self.get_departments
+    JSON.parse(File.read('app/models/departments~2016-07-28T01-31-23-07-00.json'))
   end
 
   def self.get_url
