@@ -5,6 +5,8 @@ require 'time'
 require 'json'
 
 class MainToolkit
+  include UrlHelper
+
   QUARTERS_HASH = {
     "AUTUMN" => 1,
     "FALL" => 1,
@@ -19,7 +21,7 @@ class MainToolkit
 
   # Saves latest EC XML into Dropbox
   def download_latest_xml
-    uri = URI(get_url)
+    uri = URI(UrlHelper.get_url)
 
     puts "Getting request..."
     xml_file = Net::HTTP.get(uri)
@@ -72,11 +74,6 @@ class MainToolkit
   ##############################
   private
   ##############################
-
-  def get_url
-    return "https://explorecourses.stanford.edu/search?q=all+courses&view=xml&academicYear=20162017&filter-term-Autumn=on&filter-term-Winter=on&filter-term-Spring=on&filter-coursestatus-Active=on"
-    # return "https://explorecourses.stanford.edu/search?q=CS&view=xml&academicYear=20162017&filter-term-Autumn=on&filter-term-Winter=on&filter-term-Spring=on&filter-coursestatus-Active=on"
-  end
 
   def write_to_dp(path, file)
     @dp_client.put_file(path, file)

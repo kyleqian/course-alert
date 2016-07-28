@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'user#home'
+  root 'users#home'
   get '/admin' => 'admin#admin'
+  get 'users/login' => 'users#login'
   post 'admin/run'
+  post 'users/submit'
 end

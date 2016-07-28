@@ -1,0 +1,30 @@
+<div class="header">
+  <h1>ExploreCourses Updater!</h1>
+</div>
+
+<div class="form-container">
+  <%= simple_form_for @user, url: '/users/submit', html: { id: 'main-form' } do |f| %>
+
+    <div class="form-section email-section">
+      <%= f.input :email,
+        placeholder: 'name@stanford.edu',
+        label: 'Email',
+        class: 'form-control',
+        required: ''
+      %>
+    </div>
+
+    <div class="form-section subject-settings-section">
+      <%= f.input :subject_settings,
+        class: 'form-control',
+        required: ''
+      %>
+    </div>
+
+    <div class="form-navigation">
+      <button type="button" class="next btn btn-info pull-right">Update settings</button>
+      <input type="submit" class="btn btn-default pull-right">
+      <span class="clearfix"></span>
+    </div>
+  <% end %>
+</div>
