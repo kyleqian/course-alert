@@ -35,16 +35,23 @@ $(document).on('ready page:load', function () {
     }
   }
 
-  // Load and show checkbox data
   function showCheckboxes(email) {
+    // POST to get user settings, or default settings if new user
     $.post('/users/login', {'email': email}, function(data, status) {
-      console.log(status);
       if (status == "success" && Array.isArray(data)) {
+        
+        // Loads checkboxes
         for (var i = 0; i < data.length; i++) {
           $('input[value="' + data[i] + '"]').prop('checked', true);
         }
+
+        // Shows submit button
         navigateTo(curIndex() + 1);
+
+        // Greys out email field
         $('#user_email').attr('readonly', 'readonly');
+
+        // Shows checkboxes
         $('.subject-settings-section').show();
       }
     }, 'json');
