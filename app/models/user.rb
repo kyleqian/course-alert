@@ -47,4 +47,23 @@ class User < ApplicationRecord
   def validate_pending_subject_settings
     errors.add(:pending_subject_settings, "is not valid") unless JSON.parse(pending_subject_settings).is_a? Array
   end
+
+  def self.send_all
+    toolkit = MainToolkit.new
+    latest_diff = toolkit.get_latest_diff()
+    User.all.each do |u|
+      user_settings = JSON.parse(u.subject_settings)
+      user_diff = latest_diff.select { |course| user_settings.include? course['department'] }
+      MainMailer.send_update(u, user_diff).deliver_now
+    end
+  end
+
+  def self.send_test
+    toolkit = MainToolkit.new
+    latest_diff = toolkit.get_latest_diff()
+    u = User.find_by(email: 'kylecqian@gmail.com')
+    user_settings = JSON.parse(u.subject_settings)
+    user_diff = latest_diff.select { |course| user_settings.include? course['department'] }
+    MainMailer.send_update(u, user_diff).deliver_now
+  end
 end

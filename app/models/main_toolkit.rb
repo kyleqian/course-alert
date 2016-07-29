@@ -19,6 +19,15 @@ class MainToolkit
     @dp_client = DropboxClient.new(Figaro.env.dp_key)
   end
 
+  def get_latest_diff
+    all_diffs = @dp_client.metadata('/diffs')['contents'].sort_by! { |x| Time.parse(x['client_mtime']) }.reverse!
+
+    raise "Need at least 1 diff!" unless all_diffs.length >= 1
+
+    latest_diff_path = all_diffs[0]['path']
+    return JSON.parse(@dp_client.get_file(latest_diff_path))
+  end
+
   # Saves latest EC XML into Dropbox
   def download_latest_xml
     uri = URI(UrlHelper.get_url)
@@ -82,12 +91,12 @@ class MainToolkit
   # returns hash with 2 latest XMLs and their names
   def get_two_latest_xmls_from_dp
     puts "Getting XMLs from Dropbox..."
-    xml_array = @dp_client.metadata('/XMLs')['contents'].sort_by! { |x| Time.parse(x['client_mtime']) }.reverse!
+    all_xmls = @dp_client.metadata('/XMLs')['contents'].sort_by! { |x| Time.parse(x['client_mtime']) }.reverse!
 
-    raise "Need at least 2 XMLs!" unless xml_array.length >= 2
+    raise "Need at least 2 XMLs!" unless all_xmls.length >= 2
 
-    curr_xml_path = xml_array[0]['path']
-    prev_xml_path = xml_array[1]['path']
+    curr_xml_path = all_xmls[0]['path']
+    prev_xml_path = all_xmls[1]['path']
 
     return {curr_xml_name: curr_xml_path.split("/")[-1].split(".")[0], curr_xml: @dp_client.get_file(curr_xml_path), prev_xml_name: prev_xml_path.split("/")[-1].split(".")[0], prev_xml: @dp_client.get_file(prev_xml_path)}
   end
