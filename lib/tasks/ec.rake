@@ -9,7 +9,7 @@ namespace :ec do
     toolkit.create_latest_diff()
   end
 
-  task :update => :environment do
+  task :download_diff => :environment do
     toolkit = MainToolkit.new
     toolkit.download_latest_xml()
     toolkit.create_latest_diff()

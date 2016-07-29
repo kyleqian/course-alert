@@ -50,20 +50,26 @@ class User < ApplicationRecord
 
   def self.send_all
     toolkit = MainToolkit.new
-    latest_diff = toolkit.get_latest_diff()
+    response = toolkit.get_latest_diff()
+    latest_diff = response[:latest_diff]
+    start_date = response[:start_date]
+    end_date = response[:end_date]
     User.all.each do |u|
       user_settings = JSON.parse(u.subject_settings)
       user_diff = latest_diff.select { |course| user_settings.include? course['department'] }
-      MainMailer.send_update(u, user_diff).deliver_now
+      MainMailer.send_update(u, user_diff, start_date, end_date).deliver_now
     end
   end
 
   def self.send_test
     toolkit = MainToolkit.new
-    latest_diff = toolkit.get_latest_diff()
+    response = toolkit.get_latest_diff()
+    latest_diff = response[:latest_diff]
+    start_date = response[:start_date]
+    end_date = response[:end_date]
     u = User.find_by(email: 'kylecqian@gmail.com')
     user_settings = JSON.parse(u.subject_settings)
     user_diff = latest_diff.select { |course| user_settings.include? course['department'] }
-    MainMailer.send_update(u, user_diff).deliver_now
+    MainMailer.send_update(u, user_diff, start_date, end_date).deliver_now
   end
 end

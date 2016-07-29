@@ -25,7 +25,7 @@ class MainToolkit
     raise "Need at least 1 diff!" unless all_diffs.length >= 1
 
     latest_diff_path = all_diffs[0]['path']
-    return JSON.parse(@dp_client.get_file(latest_diff_path))
+    return {start_date: latest_diff_path.split("/")[-1].split(".")[0].split('~')[2].split('T')[0], end_date: latest_diff_path.split("/")[-1].split(".")[0].split('~')[4].split('T')[0], latest_diff: JSON.parse(@dp_client.get_file(latest_diff_path))}
   end
 
   # Saves latest EC XML into Dropbox
@@ -75,8 +75,10 @@ class MainToolkit
       output_filename = "diff~#{response[:prev_xml_name]}~#{response[:curr_xml_name]}"
       write_to_dp("diffs/#{output_filename}.json", JSON.pretty_generate(new_courses))
       puts "Done generating diff!"
+      return true
     else
       puts "No new courses!"
+      return false
     end
   end
 

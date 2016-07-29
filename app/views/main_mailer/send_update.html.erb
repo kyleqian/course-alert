@@ -1,1 +1,8 @@
-<%= JSON.pretty_generate(@user_diff) %>
+<p>New courses from <%= @start_date %> to <%= @end_date %></p>
+<% @user_diff.each_with_index do |course, i| %>
+  <p>
+    <u><%= "#{i + 1}) " %><strong><%= "#{course['department']} #{course['code']}" %></strong><%= ": #{course['title']}" %></u>
+    <br>
+    <%= "#{course['description']}" %>
+  </p>
+<% end %>
