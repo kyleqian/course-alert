@@ -15,7 +15,9 @@ def main
       l.css('li').each do |d|
         d_match = /([^\(\)]+) \(([^\(\)]+)\)/.match(d.text.strip)
         if d_match
-          d_object = {name: d_match[1], code: d_match[2], default: true}
+          getting_col = l.attribute('title').text.split(' - ')
+          col = getting_col.length > 1 ? getting_col[1].split[1].to_i : 1
+          d_object = {name: d_match[1], code: d_match[2], col: col, default: true}
           parsed_listing[-1][:departments] << d_object
         end
       end

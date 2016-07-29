@@ -16,9 +16,17 @@
     <div class="form-section subject-settings-section">
       <% UrlHelper.get_departments.each do |school| %>
         <%= f.input :pending_subject_settings,
-          class: 'form-control',
-          collection: Hash[school['departments'].collect { |d| ["#{d['name']} (#{d['code']})", "#{d['code']}"] }],
+          class: 'form-control col-1',
+          collection: Hash[school['departments'].collect { |d| ["#{d['name']} (#{d['code']})", "#{d['code']}"] if d['col'] == 1 }],
           label: school['school'],
+          input_html: { multiple: true },
+          as: :check_boxes
+        %>
+
+        <%= f.input :pending_subject_settings,
+          class: 'form-control col-2',
+          collection: Hash[school['departments'].collect { |d| ["#{d['name']} (#{d['code']})", "#{d['code']}"] if d['col'] == 2 }],
+          label: false,
           input_html: { multiple: true },
           as: :check_boxes
         %>

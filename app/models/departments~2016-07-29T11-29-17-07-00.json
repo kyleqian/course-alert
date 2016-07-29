@@ -5,51 +5,61 @@
       {
         "name": "Accounting",
         "code": "ACCT",
+        "col": 1,
         "default": false
       },
       {
         "name": "Economic Analysis & Policy",
         "code": "MGTECON",
+        "col": 1,
         "default": false
       },
       {
         "name": "Finance",
         "code": "FINANCE",
+        "col": 1,
         "default": false
       },
       {
         "name": "GSB General & Interdisciplinary",
         "code": "GSBGEN",
+        "col": 1,
         "default": false
       },
       {
         "name": "Human Resource Management",
         "code": "HRMGT",
+        "col": 1,
         "default": false
       },
       {
         "name": "Marketing",
         "code": "MKTG",
+        "col": 2,
         "default": false
       },
       {
         "name": "Operations Information & Technology",
         "code": "OIT",
+        "col": 2,
         "default": false
       },
       {
         "name": "Organizational Behavior",
         "code": "OB",
+        "col": 2,
         "default": false
       },
       {
         "name": "Political Economics",
         "code": "POLECON",
+        "col": 2,
         "default": false
       },
       {
         "name": "Strategic Management",
         "code": "STRAMGT",
+        "col": 2,
         "default": false
       }
     ]
@@ -60,46 +70,55 @@
       {
         "name": "Earth, Energy, and Environmental Sciences",
         "code": "EARTH",
+        "col": 1,
         "default": true
       },
       {
         "name": "Earth Systems",
         "code": "EARTHSYS",
+        "col": 1,
         "default": true
       },
       {
         "name": "Earth, Energy, & Environmental Sciences",
         "code": "EEES",
+        "col": 1,
         "default": true
       },
       {
         "name": "Energy Resources Engineering",
         "code": "ENERGY",
+        "col": 1,
         "default": true
       },
       {
         "name": "Environment and Resources",
         "code": "ENVRES",
+        "col": 1,
         "default": true
       },
       {
         "name": "Earth System Science",
         "code": "ESS",
+        "col": 2,
         "default": true
       },
       {
         "name": "Geological Sciences",
         "code": "GS",
+        "col": 2,
         "default": true
       },
       {
         "name": "Geophysics",
         "code": "GEOPHYS",
+        "col": 2,
         "default": true
       },
       {
         "name": "Woods Institute for the Environment",
         "code": "ENVRINST",
+        "col": 2,
         "default": true
       }
     ]
@@ -110,6 +129,7 @@
       {
         "name": "Education",
         "code": "EDUC",
+        "col": 1,
         "default": true
       }
     ]
@@ -120,66 +140,79 @@
       {
         "name": "Aeronautics & Astronautics",
         "code": "AA",
+        "col": 1,
         "default": true
       },
       {
         "name": "Bioengineering",
         "code": "BIOE",
+        "col": 1,
         "default": true
       },
       {
         "name": "Chemical Engineering",
         "code": "CHEMENG",
+        "col": 1,
         "default": true
       },
       {
         "name": "Civil & Environmental Engineering",
         "code": "CEE",
+        "col": 1,
         "default": true
       },
       {
         "name": "Computational & Mathematical Engineering",
         "code": "CME",
+        "col": 1,
         "default": true
       },
       {
         "name": "Computer Science",
         "code": "CS",
+        "col": 1,
         "default": true
       },
       {
         "name": "Design Institute",
         "code": "DESINST",
+        "col": 1,
         "default": true
       },
       {
         "name": "Electrical Engineering",
         "code": "EE",
+        "col": 2,
         "default": true
       },
       {
         "name": "Engineering",
         "code": "ENGR",
+        "col": 2,
         "default": true
       },
       {
         "name": "Management Science & Engineering",
         "code": "MS&E",
+        "col": 2,
         "default": true
       },
       {
         "name": "Materials Science & Engineer",
         "code": "MATSCI",
+        "col": 2,
         "default": true
       },
       {
         "name": "Mechanical Engineering",
         "code": "ME",
+        "col": 2,
         "default": true
       },
       {
         "name": "Scientific Computing & Comput'l Math",
         "code": "SCCM",
+        "col": 2,
         "default": true
       }
     ]
@@ -190,441 +223,529 @@
       {
         "name": "African & African American Studies",
         "code": "AFRICAAM",
+        "col": 1,
         "default": true
       },
       {
         "name": "African & Middle Eastern Languages",
         "code": "AMELANG",
+        "col": 1,
         "default": true
       },
       {
         "name": "African Studies",
         "code": "AFRICAST",
+        "col": 1,
         "default": true
       },
       {
         "name": "American Studies",
         "code": "AMSTUD",
+        "col": 1,
         "default": true
       },
       {
         "name": "Anthropology",
         "code": "ANTHRO",
+        "col": 1,
         "default": true
       },
       {
         "name": "Applied Physics",
         "code": "APPPHYS",
+        "col": 1,
         "default": true
       },
       {
         "name": "Arabic Language",
         "code": "ARABLANG",
+        "col": 1,
         "default": true
       },
       {
         "name": "Archaeology",
         "code": "ARCHLGY",
+        "col": 1,
         "default": true
       },
       {
         "name": "Art History",
         "code": "ARTHIST",
+        "col": 1,
         "default": true
       },
       {
         "name": "Arts Institute",
         "code": "ARTSINST",
+        "col": 1,
         "default": true
       },
       {
         "name": "Art Studio",
         "code": "ARTSTUDI",
+        "col": 1,
         "default": true
       },
       {
         "name": "Asian American Studies",
         "code": "ASNAMST",
+        "col": 1,
         "default": true
       },
       {
         "name": "Asian Languages",
         "code": "ASNLANG",
+        "col": 1,
         "default": true
       },
       {
         "name": "Astronomy",
         "code": "ASTRNMY",
+        "col": 1,
         "default": true
       },
       {
         "name": "Biology",
         "code": "BIO",
+        "col": 1,
         "default": true
       },
       {
         "name": "Biology/Hopkins Marine",
         "code": "BIOHOPK",
+        "col": 1,
         "default": true
       },
       {
         "name": "Biophysics",
         "code": "BIOPHYS",
+        "col": 1,
         "default": true
       },
       {
         "name": "Catalan Language Courses",
         "code": "CATLANG",
+        "col": 1,
         "default": true
       },
       {
         "name": "Chemistry",
         "code": "CHEM",
+        "col": 1,
         "default": true
       },
       {
         "name": "Chicana/o-Latina/o Studies",
         "code": "CHILATST",
+        "col": 1,
         "default": true
       },
       {
         "name": "Chinese",
         "code": "CHINA",
+        "col": 1,
         "default": true
       },
       {
         "name": "Chinese Language",
         "code": "CHINLANG",
+        "col": 1,
         "default": true
       },
       {
         "name": "Classics",
         "code": "CLASSICS",
+        "col": 1,
         "default": true
       },
       {
         "name": "Communication",
         "code": "COMM",
+        "col": 1,
         "default": true
       },
       {
         "name": "Comparative Literature",
         "code": "COMPLIT",
+        "col": 1,
         "default": true
       },
       {
         "name": "Comparative Studies in Race & Ethnicity",
         "code": "CSRE",
+        "col": 1,
         "default": true
       },
       {
         "name": "Dance",
         "code": "DANCE",
+        "col": 1,
         "default": true
       },
       {
         "name": "Division of Literatures, Cultures, & Languages",
         "code": "DLCL",
+        "col": 1,
         "default": true
       },
       {
         "name": "Drama",
         "code": "TAPS",
+        "col": 1,
         "default": true
       },
       {
         "name": "East Asian Languages & Cultures",
         "code": "EALC",
+        "col": 1,
         "default": true
       },
       {
         "name": "East Asian Studies",
         "code": "EASTASN",
+        "col": 1,
         "default": true
       },
       {
         "name": "Economics",
         "code": "ECON",
+        "col": 1,
         "default": true
       },
       {
         "name": "English",
         "code": "ENGLISH",
+        "col": 1,
         "default": true
       },
       {
         "name": "English for Foreign Students",
         "code": "EFSLANG",
+        "col": 1,
         "default": true
       },
       {
         "name": "Ethics in Society",
         "code": "ETHICSOC",
+        "col": 1,
         "default": true
       },
       {
         "name": "Feminist, Gender and Sexuality Studies",
         "code": "FEMGEN",
+        "col": 1,
         "default": true
       },
       {
         "name": "Film Production",
         "code": "FILMPROD",
+        "col": 1,
         "default": true
       },
       {
         "name": "Film Studies",
         "code": "FILMSTUD",
+        "col": 1,
         "default": true
       },
       {
         "name": "French Language",
         "code": "FRENLANG",
+        "col": 1,
         "default": true
       },
       {
         "name": "French Studies",
         "code": "FRENCH",
+        "col": 1,
         "default": true
       },
       {
         "name": "German Language",
         "code": "GERLANG",
+        "col": 1,
         "default": true
       },
       {
         "name": "German Studies",
         "code": "GERMAN",
+        "col": 1,
         "default": true
       },
       {
         "name": "Global Studies",
         "code": "GLOBAL",
+        "col": 1,
         "default": true
       },
       {
         "name": "History",
         "code": "HISTORY",
+        "col": 1,
         "default": true
       },
       {
         "name": "History & Philosophy of Science",
         "code": "HPS",
+        "col": 2,
         "default": true
       },
       {
         "name": "Human Biology",
         "code": "HUMBIO",
+        "col": 2,
         "default": true
       },
       {
         "name": "Human Rights",
         "code": "HUMRTS",
+        "col": 2,
         "default": true
       },
       {
         "name": "Humanities & Sciences",
         "code": "HUMSCI",
+        "col": 2,
         "default": true
       },
       {
         "name": "Iberian & Latin American Cultures",
         "code": "ILAC",
+        "col": 2,
         "default": true
       },
       {
         "name": "Institute for International Studies",
         "code": "FSI",
+        "col": 2,
         "default": true
       },
       {
         "name": "International Policy Studies",
         "code": "IPS",
+        "col": 2,
         "default": true
       },
       {
         "name": "International Relations",
         "code": "INTNLREL",
+        "col": 2,
         "default": true
       },
       {
         "name": "Italian Language",
         "code": "ITALLANG",
+        "col": 2,
         "default": true
       },
       {
         "name": "Italian Studies",
         "code": "ITALIAN",
+        "col": 2,
         "default": true
       },
       {
         "name": "Japanese",
         "code": "JAPAN",
+        "col": 2,
         "default": true
       },
       {
         "name": "Japanese Language",
         "code": "JAPANLNG",
+        "col": 2,
         "default": true
       },
       {
         "name": "Jewish Studies",
         "code": "JEWISHST",
+        "col": 2,
         "default": true
       },
       {
         "name": "Korean",
         "code": "KOREA",
+        "col": 2,
         "default": true
       },
       {
         "name": "Korean Language",
         "code": "KORLANG",
+        "col": 2,
         "default": true
       },
       {
         "name": "Latin American Studies",
         "code": "LATINAM",
+        "col": 2,
         "default": true
       },
       {
         "name": "Linguistics",
         "code": "LINGUIST",
+        "col": 2,
         "default": true
       },
       {
         "name": "Mathematical & Computational Science",
         "code": "MCS",
+        "col": 2,
         "default": true
       },
       {
         "name": "Mathematics",
         "code": "MATH",
+        "col": 2,
         "default": true
       },
       {
         "name": "Medieval Studies",
         "code": "MEDVLST",
+        "col": 2,
         "default": true
       },
       {
         "name": "Modern Thought & Literature",
         "code": "MTL",
+        "col": 2,
         "default": true
       },
       {
         "name": "Music",
         "code": "MUSIC",
+        "col": 2,
         "default": true
       },
       {
         "name": "Native American Studies",
         "code": "NATIVEAM",
+        "col": 2,
         "default": true
       },
       {
         "name": "Philosophy",
         "code": "PHIL",
+        "col": 2,
         "default": true
       },
       {
         "name": "Physics",
         "code": "PHYSICS",
+        "col": 2,
         "default": true
       },
       {
         "name": "Political Science",
         "code": "POLISCI",
+        "col": 2,
         "default": true
       },
       {
         "name": "Portuguese Language",
         "code": "PORTLANG",
+        "col": 2,
         "default": true
       },
       {
         "name": "Psychology",
         "code": "PSYCH",
+        "col": 2,
         "default": true
       },
       {
         "name": "Public Policy",
         "code": "PUBLPOL",
+        "col": 2,
         "default": true
       },
       {
         "name": "Religious Studies",
         "code": "RELIGST",
+        "col": 2,
         "default": true
       },
       {
         "name": "Russian, East European, & Eurasian Studies",
         "code": "REES",
+        "col": 2,
         "default": true
       },
       {
         "name": "Science, Technology, & Society",
         "code": "STS",
+        "col": 2,
         "default": true
       },
       {
         "name": "Slavic Language",
         "code": "SLAVLANG",
+        "col": 2,
         "default": true
       },
       {
         "name": "Slavic Studies",
         "code": "SLAVIC",
+        "col": 2,
         "default": true
       },
       {
         "name": "Sociology",
         "code": "SOC",
+        "col": 2,
         "default": true
       },
       {
         "name": "Spanish Language",
         "code": "SPANLANG",
+        "col": 2,
         "default": true
       },
       {
         "name": "Spanish, Portuguese, & Catalan Literature",
         "code": "ILAC",
+        "col": 2,
         "default": true
       },
       {
         "name": "Special Language Program",
         "code": "SPECLANG",
+        "col": 2,
         "default": true
       },
       {
         "name": "Stanford in Washington",
         "code": "SIW",
+        "col": 2,
         "default": true
       },
       {
         "name": "Statistics",
         "code": "STATS",
+        "col": 2,
         "default": true
       },
       {
         "name": "Symbolic Systems",
         "code": "SYMSYS",
+        "col": 2,
         "default": true
       },
       {
         "name": "Theater and Performance Studies",
         "code": "TAPS",
+        "col": 2,
         "default": true
       },
       {
         "name": "Tibetan Language",
         "code": "TIBETLNG",
+        "col": 2,
         "default": true
       },
       {
         "name": "Urban Studies",
         "code": "URBANST",
+        "col": 2,
         "default": true
       }
     ]
@@ -635,11 +756,13 @@
       {
         "name": "Law",
         "code": "LAW",
+        "col": 1,
         "default": false
       },
       {
         "name": "Law, Nonprofessional",
         "code": "LAWGEN",
+        "col": 2,
         "default": false
       }
     ]
@@ -650,196 +773,235 @@
       {
         "name": "Anesthesia",
         "code": "ANES",
+        "col": 1,
         "default": false
       },
       {
         "name": "Biochemistry",
         "code": "BIOC",
+        "col": 1,
         "default": false
       },
       {
         "name": "Biomedical Data Science",
         "code": "BIODS",
+        "col": 1,
         "default": false
       },
       {
         "name": "Biomedical Informatics",
         "code": "BIOMEDIN",
+        "col": 1,
         "default": false
       },
       {
         "name": "Biosciences Interdisciplinary",
         "code": "BIOS",
+        "col": 1,
         "default": false
       },
       {
         "name": "Cancer Biology",
         "code": "CBIO",
+        "col": 1,
         "default": false
       },
       {
         "name": "Cardiothoracic Surgery",
         "code": "CTS",
+        "col": 1,
         "default": false
       },
       {
         "name": "Chemical & Systems Biology",
         "code": "CSB",
+        "col": 1,
         "default": false
       },
       {
         "name": "Community Health and Prevention Research",
         "code": "CHPR",
+        "col": 1,
         "default": false
       },
       {
         "name": "Comparative Medicine",
         "code": "COMPMED",
+        "col": 1,
         "default": false
       },
       {
         "name": "Dermatology",
         "code": "DERM",
+        "col": 1,
         "default": false
       },
       {
         "name": "Developmental Biology",
         "code": "DBIO",
+        "col": 1,
         "default": false
       },
       {
         "name": "Emergency Medicine",
         "code": "EMED",
+        "col": 1,
         "default": false
       },
       {
         "name": "Family and Community Medicine",
         "code": "FAMMED",
+        "col": 1,
         "default": false
       },
       {
         "name": "Genetics",
         "code": "GENE",
+        "col": 1,
         "default": false
       },
       {
         "name": "Health Research & Policy",
         "code": "HRP",
+        "col": 1,
         "default": false
       },
       {
         "name": "Immunology",
         "code": "IMMUNOL",
+        "col": 1,
         "default": false
       },
       {
         "name": "Medicine",
         "code": "MED",
+        "col": 1,
         "default": true
       },
       {
         "name": "Medicine Interdisciplinary",
         "code": "INDE",
+        "col": 1,
         "default": false
       },
       {
         "name": "Microbiology & Immunology",
         "code": "MI",
+        "col": 1,
         "default": false
       },
       {
         "name": "Molecular & Cellular Physiology",
         "code": "MCP",
+        "col": 2,
         "default": false
       },
       {
         "name": "Neurobiology",
         "code": "NBIO",
+        "col": 2,
         "default": false
       },
       {
         "name": "Neurology & Neurological Sciences",
         "code": "NENS",
+        "col": 2,
         "default": false
       },
       {
         "name": "Neurosciences Program",
         "code": "NEPR",
+        "col": 2,
         "default": false
       },
       {
         "name": "Neurosurgery",
         "code": "NSUR",
+        "col": 2,
         "default": false
       },
       {
         "name": "Obstetrics & Gynecology",
         "code": "OBGYN",
+        "col": 2,
         "default": false
       },
       {
         "name": "Ophthalmology",
         "code": "OPHT",
+        "col": 2,
         "default": false
       },
       {
         "name": "Orthopedic Surgery",
         "code": "ORTHO",
+        "col": 2,
         "default": false
       },
       {
         "name": "Otolaryngology",
         "code": "OTOHNS",
+        "col": 2,
         "default": false
       },
       {
         "name": "Pathology",
         "code": "PATH",
+        "col": 2,
         "default": false
       },
       {
         "name": "Pediatrics",
         "code": "PEDS",
+        "col": 2,
         "default": false
       },
       {
         "name": "Psychiatry",
         "code": "PSYC",
+        "col": 2,
         "default": true
       },
       {
         "name": "Radiation Oncology",
         "code": "RADO",
+        "col": 2,
         "default": false
       },
       {
         "name": "Radiology",
         "code": "RAD",
+        "col": 2,
         "default": false
       },
       {
         "name": "School of Medicine General",
         "code": "SOMGEN",
+        "col": 2,
         "default": false
       },
       {
         "name": "Stem Cell Biology and Regenerative Medicine",
         "code": "STEMREM",
+        "col": 2,
         "default": false
       },
       {
         "name": "Structural Biology",
         "code": "SBIO",
+        "col": 2,
         "default": false
       },
       {
         "name": "Surgery",
         "code": "SURG",
+        "col": 2,
         "default": false
       },
       {
         "name": "Urology",
         "code": "UROL",
+        "col": 2,
         "default": false
       }
     ]
@@ -850,131 +1012,157 @@
       {
         "name": "Education as Self-Fashioning",
         "code": "ESF",
+        "col": 1,
         "default": false
       },
       {
         "name": "Immersion in the Arts",
         "code": "ITALIC",
+        "col": 1,
         "default": false
       },
       {
         "name": "Leadership Intensive",
         "code": "LEAD",
+        "col": 1,
         "default": true
       },
       {
         "name": "Oral Communications",
         "code": "ORALCOMM",
+        "col": 1,
         "default": true
       },
       {
         "name": "Overseas Studies General",
         "code": "OSPGEN",
+        "col": 1,
         "default": false
       },
       {
         "name": "Overseas Studies in Australia",
         "code": "OSPAUSTL",
+        "col": 1,
         "default": false
       },
       {
         "name": "Overseas Studies in Barcelona",
         "code": "CASB",
+        "col": 1,
         "default": false
       },
       {
         "name": "Overseas Studies in Beijing",
         "code": "OSPBEIJ",
+        "col": 1,
         "default": false
       },
       {
         "name": "Overseas Studies in Berlin",
         "code": "OSPBER",
+        "col": 1,
         "default": false
       },
       {
         "name": "Overseas Studies in Cape Town",
         "code": "OSPCPTWN",
+        "col": 1,
         "default": false
       },
       {
         "name": "Overseas Studies in Florence",
         "code": "OSPFLOR",
+        "col": 1,
         "default": false
       },
       {
         "name": "Overseas Studies in Istanbul",
         "code": "OSPISTAN",
+        "col": 1,
         "default": false
       },
       {
         "name": "Overseas Studies in Kyoto",
         "code": "OSPKYOTO",
+        "col": 1,
         "default": false
       },
       {
         "name": "Overseas Studies in Kyoto",
         "code": "KCJS",
+        "col": 2,
         "default": false
       },
       {
         "name": "Overseas Studies in Madrid",
         "code": "OSPMADRD",
+        "col": 2,
         "default": false
       },
       {
         "name": "Overseas Studies in Oxford",
         "code": "OSPOXFRD",
+        "col": 2,
         "default": false
       },
       {
         "name": "Overseas Studies in Paris",
         "code": "OSPPARIS",
+        "col": 2,
         "default": false
       },
       {
         "name": "Overseas Studies in Santiago",
         "code": "OSPSANTG",
+        "col": 2,
         "default": false
       },
       {
         "name": "ROTC Air Force",
         "code": "ROTCAF",
+        "col": 2,
         "default": false
       },
       {
         "name": "ROTC Army",
         "code": "ROTCARMY",
+        "col": 2,
         "default": false
       },
       {
         "name": "ROTC Navy",
         "code": "ROTCNAVY",
+        "col": 2,
         "default": false
       },
       {
         "name": "Stanford in New York",
         "code": "SINY",
+        "col": 2,
         "default": false
       },
       {
         "name": "Structured Liberal Education",
         "code": "SLE",
+        "col": 2,
         "default": false
       },
       {
         "name": "Thinking Matters",
         "code": "THINK",
+        "col": 2,
         "default": false
       },
       {
         "name": "Undergraduate Advising and Research",
         "code": "UAR",
+        "col": 2,
         "default": false
       },
       {
         "name": "Writing & Rhetoric, Program in",
         "code": "PWR",
+        "col": 2,
         "default": false
       }
     ]
@@ -985,6 +1173,7 @@
       {
         "name": "Teaching and Learning",
         "code": "VPTL",
+        "col": 1,
         "default": true
       }
     ]
@@ -995,21 +1184,25 @@
       {
         "name": "Athletics, Club Sports, Martial Arts",
         "code": "ATHLETIC",
+        "col": 1,
         "default": true
       },
       {
         "name": "Outdoor Education",
         "code": "OUTDOOR",
+        "col": 1,
         "default": true
       },
       {
         "name": "Physical Education",
         "code": "PE",
+        "col": 2,
         "default": true
       },
       {
         "name": "Wellness Education",
         "code": "WELLNESS",
+        "col": 2,
         "default": true
       }
     ]
