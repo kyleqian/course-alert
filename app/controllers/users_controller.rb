@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def login
     # param passed from frontend
     @user = User.find_by(email: params[:email])
-    default_departments = (@user && @user.subject_settings != nil) ? JSON.parse(@user.subject_settings) : UrlHelper.get_default_departments
+    default_departments = (@user && @user.subject_settings != '[]') ? JSON.parse(@user.subject_settings) : UrlHelper.get_default_departments
     render json: default_departments.to_json
   end
 
@@ -24,12 +24,8 @@ class UsersController < ApplicationController
 
     if @user.valid?
       @user.save!
+      MainMailer.send_confirm(@user, status).deliver_now
       redirect_to controller: :users, action: :confirmation, s: status
-      # if @question.email? 
-      #   QuestionMailer.send_question(@question).deliver_now
-      #   AdminMailer.send_question(@question).deliver_now
-      # end
-      # redirect_to controller: 'questions', action: 'receipt', q: @question.tracking_id
     end
   end
 
@@ -38,6 +34,16 @@ class UsersController < ApplicationController
 
   def update
     # apply new settings and set verify and subscribe to true
+    @user = User.find_by(public_id: params[:pid])
+    if @user
+      @user.subject_settings = @user.pending_subject_settings
+      @user.verified = true
+      @user.subscribed = true
+      @user.pending_subject_settings = '[]'
+      if @user.valid?
+        @user.save!
+      end
+    end
   end
 
   private

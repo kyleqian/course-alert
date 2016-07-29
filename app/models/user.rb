@@ -16,11 +16,12 @@
 class User < ApplicationRecord
   include ActiveModel::Validations
 
-  before_create :create_public_id, :preprocess_user
+  before_validation :create_public_id, :preprocess_user, on: :create
   validates :email, presence: true
-  validates :subject_settings, presence: false
+  validates :subject_settings, presence: true
   validates :pending_subject_settings, presence: true
   validate :validate_email
+  validate :validate_subject_settings
   validate :validate_pending_subject_settings
 
   def create_public_id
@@ -32,10 +33,15 @@ class User < ApplicationRecord
   def preprocess_user
     self.subscribed = false
     self.verified = false
+    self.subject_settings = '[]'
   end
 
   def validate_email
     errors.add(:email, "is not valid") unless (/@/ =~ email) != nil
+  end
+
+  def validate_subject_settings
+    errors.add(:subject_settings, "is not valid") unless JSON.parse(subject_settings).is_a? Array
   end
 
   def validate_pending_subject_settings
