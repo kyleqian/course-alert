@@ -61,7 +61,7 @@ $(document).on('ready page:load', function () {
   $sections.each(function(index, section) {
     $(section).find(':input').attr('data-parsley-group', 'block-' + index);
   });
-  
+
   navigateTo(0); // Start at the beginning
 
   // Repurpose Enter key for inputting email
