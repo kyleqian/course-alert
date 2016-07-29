@@ -14,7 +14,8 @@ $(document).on('ready page:load', function () {
         .addClass('current');
     // Show only the navigation buttons that make sense for the current section:
     var atTheEnd = index >= $sections.length - 1;
-    $('.form-navigation .next').toggle(!atTheEnd);
+    if (atTheEnd) $('.form-navigation .next').attr('disabled', '');
+    // $('.form-navigation .next').toggle(!atTheEnd);
     $('.form-navigation [type=submit]').toggle(atTheEnd);
   }
 

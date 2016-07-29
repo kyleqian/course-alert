@@ -7,10 +7,17 @@
 
     <div class="form-section email-section">
       <%= f.input :email,
+        label: false,
         placeholder: 'name@stanford.edu',
         class: 'form-control',
         required: ''
       %>
+    </div>
+
+    <div class="form-navigation">
+      <button type="button" class="next btn btn-default">Update settings</button>
+      <input type="submit" class="btn btn-success">
+      <span class="clearfix"></span>
     </div>
 
     <div class="form-section subject-settings-section">
@@ -35,12 +42,6 @@
           %>
         </div>
       <% end %>
-    </div>
-
-    <div class="form-navigation">
-      <button type="button" class="next btn btn-info pull-right">Update settings</button>
-      <input type="submit" class="btn btn-default pull-right">
-      <span class="clearfix"></span>
     </div>
   <% end %>
 </div>

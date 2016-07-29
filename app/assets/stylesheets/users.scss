@@ -15,6 +15,8 @@
   text-align: center;
 }
 
+// Get rid of yellow highlighting for autocomplete
+
 .form-control[readonly] {
   -webkit-box-shadow: 0 0 0px 1000px #eee inset !important;
 }
@@ -23,10 +25,23 @@
   -webkit-box-shadow: 0 0 0px 1000px white inset !important;
 }
 
+// Get rid of blue input glow
+
 input.form-control, input.form-control:focus {
   box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   -moz-transition: none;
   -webkit-transition: none;
+}
+
+// Columns for checkboxes
+
+.school-container {
+}
+
+.col-1, .col-2 {
+  position: relative;
+  display: inline-block;
+  width: 49%;
 }
