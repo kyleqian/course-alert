@@ -61,13 +61,13 @@ class User < ApplicationRecord
     end
   end
 
-  def self.send_test
+  def self.send_test(email='kylecqian@gmail.com')
     toolkit = MainToolkit.new
     response = toolkit.get_latest_diff()
     latest_diff = response[:latest_diff]
     start_date = response[:start_date]
     end_date = response[:end_date]
-    u = User.find_by(email: 'kylecqian@gmail.com')
+    u = User.find_by(email: email)
     user_settings = JSON.parse(u.subject_settings)
     user_diff = latest_diff.select { |course| user_settings.include? course['department'] }
     MainMailer.send_update(u, user_diff, start_date, end_date).deliver_now
