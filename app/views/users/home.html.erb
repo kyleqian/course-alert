@@ -14,7 +14,6 @@
     </div>
 
     <div class="form-section subject-settings-section">
-
       <% UrlHelper.get_departments.each do |school| %>
         <%= f.input :subject_settings,
           class: 'form-control',
@@ -24,14 +23,6 @@
           as: :check_boxes
         %>
       <% end %>
-
-
-      <%#= f.input :subject_settings,
-        class: 'form-control',
-        collection: UrlHelper.get_formatted_departments,
-        input_html: { multiple: true },
-        as: :check_boxes
-      %>
     </div>
 
     <div class="form-navigation">

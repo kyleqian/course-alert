@@ -36,6 +36,13 @@ $(document).on('ready page:load', function () {
     }
   }
 
+  // Load checkbox data
+  function loadCheckboxes() {
+    $.post('/users/login', {'email': $('#user_email').val()},function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+    }, 'json');
+  }
+
   // Prepare sections by setting the `data-parsley-group` attribute to 'block-0', 'block-1', etc.
   $sections.each(function(index, section) {
     $(section).find(':input').attr('data-parsley-group', 'block-' + index);
@@ -43,11 +50,7 @@ $(document).on('ready page:load', function () {
   
   navigateTo(0); // Start at the beginning
 
-
-  //////////////////////////
-  // REPURPOSE RETURN KEY //
-  //////////////////////////
-
+  // Repurpose Enter key for inputting email
   $('#user_email').on('keyup keypress', function (e) {
     var key = e.keyCode || e.which;
     if (key == 13) {

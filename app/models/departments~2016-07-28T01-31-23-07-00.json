@@ -5,52 +5,52 @@
       {
         "name": "Accounting",
         "code": "ACCT",
-        "default": true
+        "default": false
       },
       {
         "name": "Economic Analysis & Policy",
         "code": "MGTECON",
-        "default": true
+        "default": false
       },
       {
         "name": "Finance",
         "code": "FINANCE",
-        "default": true
+        "default": false
       },
       {
         "name": "GSB General & Interdisciplinary",
         "code": "GSBGEN",
-        "default": true
+        "default": false
       },
       {
         "name": "Human Resource Management",
         "code": "HRMGT",
-        "default": true
+        "default": false
       },
       {
         "name": "Marketing",
         "code": "MKTG",
-        "default": true
+        "default": false
       },
       {
         "name": "Operations Information & Technology",
         "code": "OIT",
-        "default": true
+        "default": false
       },
       {
         "name": "Organizational Behavior",
         "code": "OB",
-        "default": true
+        "default": false
       },
       {
         "name": "Political Economics",
         "code": "POLECON",
-        "default": true
+        "default": false
       },
       {
         "name": "Strategic Management",
         "code": "STRAMGT",
-        "default": true
+        "default": false
       }
     ]
   },
@@ -635,12 +635,12 @@
       {
         "name": "Law",
         "code": "LAW",
-        "default": true
+        "default": false
       },
       {
         "name": "Law, Nonprofessional",
         "code": "LAWGEN",
-        "default": true
+        "default": false
       }
     ]
   },
@@ -650,87 +650,87 @@
       {
         "name": "Anesthesia",
         "code": "ANES",
-        "default": true
+        "default": false
       },
       {
         "name": "Biochemistry",
         "code": "BIOC",
-        "default": true
+        "default": false
       },
       {
         "name": "Biomedical Data Science",
         "code": "BIODS",
-        "default": true
+        "default": false
       },
       {
         "name": "Biomedical Informatics",
         "code": "BIOMEDIN",
-        "default": true
+        "default": false
       },
       {
         "name": "Biosciences Interdisciplinary",
         "code": "BIOS",
-        "default": true
+        "default": false
       },
       {
         "name": "Cancer Biology",
         "code": "CBIO",
-        "default": true
+        "default": false
       },
       {
         "name": "Cardiothoracic Surgery",
         "code": "CTS",
-        "default": true
+        "default": false
       },
       {
         "name": "Chemical & Systems Biology",
         "code": "CSB",
-        "default": true
+        "default": false
       },
       {
         "name": "Community Health and Prevention Research",
         "code": "CHPR",
-        "default": true
+        "default": false
       },
       {
         "name": "Comparative Medicine",
         "code": "COMPMED",
-        "default": true
+        "default": false
       },
       {
         "name": "Dermatology",
         "code": "DERM",
-        "default": true
+        "default": false
       },
       {
         "name": "Developmental Biology",
         "code": "DBIO",
-        "default": true
+        "default": false
       },
       {
         "name": "Emergency Medicine",
         "code": "EMED",
-        "default": true
+        "default": false
       },
       {
         "name": "Family and Community Medicine",
         "code": "FAMMED",
-        "default": true
+        "default": false
       },
       {
         "name": "Genetics",
         "code": "GENE",
-        "default": true
+        "default": false
       },
       {
         "name": "Health Research & Policy",
         "code": "HRP",
-        "default": true
+        "default": false
       },
       {
         "name": "Immunology",
         "code": "IMMUNOL",
-        "default": true
+        "default": false
       },
       {
         "name": "Medicine",
@@ -740,67 +740,67 @@
       {
         "name": "Medicine Interdisciplinary",
         "code": "INDE",
-        "default": true
+        "default": false
       },
       {
         "name": "Microbiology & Immunology",
         "code": "MI",
-        "default": true
+        "default": false
       },
       {
         "name": "Molecular & Cellular Physiology",
         "code": "MCP",
-        "default": true
+        "default": false
       },
       {
         "name": "Neurobiology",
         "code": "NBIO",
-        "default": true
+        "default": false
       },
       {
         "name": "Neurology & Neurological Sciences",
         "code": "NENS",
-        "default": true
+        "default": false
       },
       {
         "name": "Neurosciences Program",
         "code": "NEPR",
-        "default": true
+        "default": false
       },
       {
         "name": "Neurosurgery",
         "code": "NSUR",
-        "default": true
+        "default": false
       },
       {
         "name": "Obstetrics & Gynecology",
         "code": "OBGYN",
-        "default": true
+        "default": false
       },
       {
         "name": "Ophthalmology",
         "code": "OPHT",
-        "default": true
+        "default": false
       },
       {
         "name": "Orthopedic Surgery",
         "code": "ORTHO",
-        "default": true
+        "default": false
       },
       {
         "name": "Otolaryngology",
         "code": "OTOHNS",
-        "default": true
+        "default": false
       },
       {
         "name": "Pathology",
         "code": "PATH",
-        "default": true
+        "default": false
       },
       {
         "name": "Pediatrics",
         "code": "PEDS",
-        "default": true
+        "default": false
       },
       {
         "name": "Psychiatry",
@@ -810,37 +810,37 @@
       {
         "name": "Radiation Oncology",
         "code": "RADO",
-        "default": true
+        "default": false
       },
       {
         "name": "Radiology",
         "code": "RAD",
-        "default": true
+        "default": false
       },
       {
         "name": "School of Medicine General",
         "code": "SOMGEN",
-        "default": true
+        "default": false
       },
       {
         "name": "Stem Cell Biology and Regenerative Medicine",
         "code": "STEMREM",
-        "default": true
+        "default": false
       },
       {
         "name": "Structural Biology",
         "code": "SBIO",
-        "default": true
+        "default": false
       },
       {
         "name": "Surgery",
         "code": "SURG",
-        "default": true
+        "default": false
       },
       {
         "name": "Urology",
         "code": "UROL",
-        "default": true
+        "default": false
       }
     ]
   },
@@ -850,12 +850,12 @@
       {
         "name": "Education as Self-Fashioning",
         "code": "ESF",
-        "default": true
+        "default": false
       },
       {
         "name": "Immersion in the Arts",
         "code": "ITALIC",
-        "default": true
+        "default": false
       },
       {
         "name": "Leadership Intensive",
@@ -870,112 +870,112 @@
       {
         "name": "Overseas Studies General",
         "code": "OSPGEN",
-        "default": true
+        "default": false
       },
       {
         "name": "Overseas Studies in Australia",
         "code": "OSPAUSTL",
-        "default": true
+        "default": false
       },
       {
         "name": "Overseas Studies in Barcelona",
         "code": "CASB",
-        "default": true
+        "default": false
       },
       {
         "name": "Overseas Studies in Beijing",
         "code": "OSPBEIJ",
-        "default": true
+        "default": false
       },
       {
         "name": "Overseas Studies in Berlin",
         "code": "OSPBER",
-        "default": true
+        "default": false
       },
       {
         "name": "Overseas Studies in Cape Town",
         "code": "OSPCPTWN",
-        "default": true
+        "default": false
       },
       {
         "name": "Overseas Studies in Florence",
         "code": "OSPFLOR",
-        "default": true
+        "default": false
       },
       {
         "name": "Overseas Studies in Istanbul",
         "code": "OSPISTAN",
-        "default": true
+        "default": false
       },
       {
         "name": "Overseas Studies in Kyoto",
         "code": "OSPKYOTO",
-        "default": true
+        "default": false
       },
       {
         "name": "Overseas Studies in Kyoto",
         "code": "KCJS",
-        "default": true
+        "default": false
       },
       {
         "name": "Overseas Studies in Madrid",
         "code": "OSPMADRD",
-        "default": true
+        "default": false
       },
       {
         "name": "Overseas Studies in Oxford",
         "code": "OSPOXFRD",
-        "default": true
+        "default": false
       },
       {
         "name": "Overseas Studies in Paris",
         "code": "OSPPARIS",
-        "default": true
+        "default": false
       },
       {
         "name": "Overseas Studies in Santiago",
         "code": "OSPSANTG",
-        "default": true
+        "default": false
       },
       {
         "name": "ROTC Air Force",
         "code": "ROTCAF",
-        "default": true
+        "default": false
       },
       {
         "name": "ROTC Army",
         "code": "ROTCARMY",
-        "default": true
+        "default": false
       },
       {
         "name": "ROTC Navy",
         "code": "ROTCNAVY",
-        "default": true
+        "default": false
       },
       {
         "name": "Stanford in New York",
         "code": "SINY",
-        "default": true
+        "default": false
       },
       {
         "name": "Structured Liberal Education",
         "code": "SLE",
-        "default": true
+        "default": false
       },
       {
         "name": "Thinking Matters",
         "code": "THINK",
-        "default": true
+        "default": false
       },
       {
         "name": "Undergraduate Advising and Research",
         "code": "UAR",
-        "default": true
+        "default": false
       },
       {
         "name": "Writing & Rhetoric, Program in",
         "code": "PWR",
-        "default": true
+        "default": false
       }
     ]
   },

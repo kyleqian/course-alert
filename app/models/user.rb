@@ -19,7 +19,7 @@ class User < ApplicationRecord
 
   def create_public_id
     begin
-      self.public_id = SecureRandom.hex(8)
+      self.public_id = SecureRandom.hex(4)
     end while self.class.exists?(public_id: public_id)
   end
 

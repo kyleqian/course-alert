@@ -14,3 +14,15 @@
 .header {
   text-align: center;
 }
+
+.form-control[readonly] {
+  -webkit-box-shadow: 0 0 0px 1000px #eee inset !important;
+}
+
+input.form-control, input.form-control:focus {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+}

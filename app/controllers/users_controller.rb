@@ -3,13 +3,22 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def submit
-    @user = User.new(user_params)
-    puts @user.inspect
+  def login
+    @user = User.find_by(email: params[:email])
+    default_departments = @user ? JSON.parse(@user.subject_settings) : UrlHelper.get_default_departments
+    render json: default_departments.to_json
   end
 
-  def login
-    
+  def submit
+    @user = User.new(user_params)
+    if @user.valid?
+      @user.save
+      # if @question.email? 
+      #   QuestionMailer.send_question(@question).deliver_now
+      #   AdminMailer.send_question(@question).deliver_now
+      # end
+      # redirect_to controller: 'questions', action: 'receipt', q: @question.tracking_id
+    end
   end
 
   private

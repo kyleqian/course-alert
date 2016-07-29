@@ -45,6 +45,16 @@ module UrlHelper
     JSON.parse(File.read('app/models/departments~2016-07-28T01-31-23-07-00.json'))
   end
 
+  def self.get_default_departments
+    default_departments = []
+    self.get_departments.each do |school|
+      school['departments'].each do |d|
+        default_departments << d['code'] if d['default']
+      end
+    end
+    return default_departments
+  end
+
   def self.get_url
     url = "https://explorecourses.stanford.edu/search?q=#{QUERY}&view=xml&academicYear=#{ACADEMIC_YEAR}&filter-coursestatus-Active=on"
     ALLOWED_COMPONENTS.each { |c| url += "&filter-component-#{c}=on" }
