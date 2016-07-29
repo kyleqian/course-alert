@@ -30,6 +30,8 @@ $(document).on('ready page:load', function () {
 
   function submitEmail() {
     if ($('#main-form').parsley().validate({group: 'block-' + curIndex()})) {
+      var email = $('#user_email').val()
+      loadCheckboxes(email);
       navigateTo(curIndex() + 1);
       $('#user_email').attr('readonly', 'readonly');
       $('.subject-settings-section').show();
@@ -37,8 +39,8 @@ $(document).on('ready page:load', function () {
   }
 
   // Load checkbox data
-  function loadCheckboxes() {
-    $.post('/users/login', {'email': $('#user_email').val()},function(data, status){
+  function loadCheckboxes(email) {
+    $.post('/users/login', {'email': email},function(data, status){
         alert("Data: " + data + "\nStatus: " + status);
     }, 'json');
   }

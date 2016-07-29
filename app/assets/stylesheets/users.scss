@@ -19,6 +19,10 @@
   -webkit-box-shadow: 0 0 0px 1000px #eee inset !important;
 }
 
+.form-control {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
 input.form-control, input.form-control:focus {
   box-shadow: none;
   -webkit-box-shadow: none;
