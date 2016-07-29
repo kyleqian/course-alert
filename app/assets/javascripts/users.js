@@ -23,11 +23,11 @@ $(document).on('ready page:load', function () {
     return $sections.index($sections.filter('.current'));
   }
 
-  // Next button goes forward iff current block validates
   $('.form-navigation .next').click(function() {
     submitEmail();
   });
 
+  // Submits email and shows checkboxes iff current block validates
   function submitEmail() {
     if ($('#main-form').parsley().validate({group: 'block-' + curIndex()})) {
       var email = $('#user_email').val();
