@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   post 'admin/run'
   post 'users/submit'
   post 'users/login'
+  get 'users/confirmation'
 end
