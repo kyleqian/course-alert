@@ -17,7 +17,7 @@
       <% UrlHelper.get_departments.each do |school| %>
         <div class="col-1">
           <%= f.input :pending_subject_settings,
-            collection: school['departments'].select { |d| d['col'] == 1 }.collect { |d| ["#{d['name']} (#{d['code']})", "#{d['code']}"] }.to_h,
+            collection: Hash[school['departments'].select { |d| d['col'] == 1 }.collect { |d| ["#{d['name']} (#{d['code']})", "#{d['code']}"] }],
             label: school['school'],
             input_html: { multiple: true },
             required: false,
@@ -27,7 +27,7 @@
 
         <div class="col-2">
           <%= f.input :pending_subject_settings,
-            collection: school['departments'].select { |d| d['col'] == 2 }.collect { |d| ["#{d['name']} (#{d['code']})", "#{d['code']}"] }.to_h,
+            collection: Hash[school['departments'].select { |d| d['col'] == 2 }.collect { |d| ["#{d['name']} (#{d['code']})", "#{d['code']}"] }],
             label: false,
             input_html: { multiple: true },
             required: false,
