@@ -15,7 +15,7 @@
 
     <div class="form-section subject-settings-section">
       <% UrlHelper.get_departments.each do |school| %>
-        <%= f.input :subject_settings,
+        <%= f.input :pending_subject_settings,
           class: 'form-control',
           collection: Hash[school['departments'].collect { |d| ["#{d['name']} (#{d['code']})", "#{d['code']}"] }],
           label: school['school'],

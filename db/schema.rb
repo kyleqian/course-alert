@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160727080319) do
+ActiveRecord::Schema.define(version: 20160729102904) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
@@ -18,8 +18,11 @@ ActiveRecord::Schema.define(version: 20160727080319) do
     t.string   "public_id"
     t.boolean  "subscribed"
     t.boolean  "verified"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.text     "pending_subject_settings"
+    t.index ["email"], name: "index_users_on_email"
+    t.index ["public_id"], name: "index_users_on_public_id"
   end
 
 end

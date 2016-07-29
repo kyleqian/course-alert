@@ -2,14 +2,15 @@
 #
 # Table name: users
 #
-#  id               :integer          not null, primary key
-#  email            :string
-#  subject_settings :text
-#  public_id        :string
-#  subscribed       :boolean
-#  verified         :boolean
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
+#  id                       :integer          not null, primary key
+#  email                    :string
+#  subject_settings         :text
+#  public_id                :string
+#  subscribed               :boolean
+#  verified                 :boolean
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
+#  pending_subject_settings :text
 #
 
 require 'test_helper'

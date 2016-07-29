@@ -2,14 +2,15 @@
 #
 # Table name: users
 #
-#  id               :integer          not null, primary key
-#  email            :string
-#  subject_settings :text
-#  public_id        :string
-#  subscribed       :boolean
-#  verified         :boolean
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
+#  id                       :integer          not null, primary key
+#  email                    :string
+#  subject_settings         :text
+#  public_id                :string
+#  subscribed               :boolean
+#  verified                 :boolean
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
+#  pending_subject_settings :text
 #
 
 class User < ApplicationRecord
@@ -17,9 +18,10 @@ class User < ApplicationRecord
 
   before_create :create_public_id, :preprocess_user
   validates :email, presence: true
-  validates :subject_settings, presence: true
+  validates :subject_settings, presence: false
+  validates :pending_subject_settings, presence: true
   validate :validate_email
-  validate :validate_subject_settings
+  validate :validate_pending_subject_settings
 
   def create_public_id
     begin
@@ -36,7 +38,7 @@ class User < ApplicationRecord
     errors.add(:email, "is not valid") unless (/@/ =~ email) != nil
   end
 
-  def validate_subject_settings
-    errors.add(:subject_settings, "is not valid") unless JSON.parse(subject_settings).is_a? Array
+  def validate_pending_subject_settings
+    errors.add(:pending_subject_settings, "is not valid") unless JSON.parse(pending_subject_settings).is_a? Array
   end
 end

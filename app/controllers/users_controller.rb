@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def login
     @user = User.find_by(email: params[:email])
-    default_departments = @user ? JSON.parse(@user.subject_settings) : UrlHelper.get_default_departments
+    default_departments = (@user && @user.subject_settings != nil) ? JSON.parse(@user.subject_settings) : UrlHelper.get_default_departments
     render json: default_departments.to_json
   end
 
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     status = nil
     if @user
       status = 'update'
-      @user.subject_settings = user_params[:subject_settings]
+      @user.pending_subject_settings = user_params[:pending_subject_settings]
     else
       status = 'new'
       @user = User.new(user_params)
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params[:user][:subject_settings].reject!(&:empty?)
-    params.require(:user).permit(:email, subject_settings: [])
+    params[:user][:pending_subject_settings].reject!(&:empty?)
+    params.require(:user).permit(:email, pending_subject_settings: [])
   end
 end
