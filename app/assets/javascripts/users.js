@@ -30,7 +30,7 @@ $(document).on('ready page:load', function () {
 
   function submitEmail() {
     if ($('#main-form').parsley().validate({group: 'block-' + curIndex()})) {
-      var email = $('#user_email').val()
+      var email = $('#user_email').val();
       showCheckboxes(email);
     }
   }
