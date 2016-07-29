@@ -55,6 +55,8 @@ class User < ApplicationRecord
     start_date = response[:start_date]
     end_date = response[:end_date]
     User.all.each do |u|
+      next unless u.verified and u.subscribed
+
       user_settings = JSON.parse(u.subject_settings)
       user_diff = latest_diff.select { |course| user_settings.include? course['department'] }
       if user_diff.length > 0
