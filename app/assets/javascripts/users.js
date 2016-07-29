@@ -31,17 +31,22 @@ $(document).on('ready page:load', function () {
   function submitEmail() {
     if ($('#main-form').parsley().validate({group: 'block-' + curIndex()})) {
       var email = $('#user_email').val()
-      loadCheckboxes(email);
-      navigateTo(curIndex() + 1);
-      $('#user_email').attr('readonly', 'readonly');
-      $('.subject-settings-section').show();
+      showCheckboxes(email);
     }
   }
 
-  // Load checkbox data
-  function loadCheckboxes(email) {
-    $.post('/users/login', {'email': email},function(data, status){
-        alert("Data: " + data + "\nStatus: " + status);
+  // Load and show checkbox data
+  function showCheckboxes(email) {
+    $.post('/users/login', {'email': email}, function(data, status) {
+      console.log(status);
+      if (status == "success" && Array.isArray(data)) {
+        for (var i = 0; i < data.length; i++) {
+          $('input[value="' + data[i] + '"]').prop('checked', true);
+        }
+        navigateTo(curIndex() + 1);
+        $('#user_email').attr('readonly', 'readonly');
+        $('.subject-settings-section').show();
+      }
     }, 'json');
   }
 
