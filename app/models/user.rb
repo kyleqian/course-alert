@@ -57,7 +57,9 @@ class User < ApplicationRecord
     User.all.each do |u|
       user_settings = JSON.parse(u.subject_settings)
       user_diff = latest_diff.select { |course| user_settings.include? course['department'] }
-      MainMailer.send_update(u, user_diff, start_date, end_date).deliver_now
+      if user_diff.length > 0
+        MainMailer.send_update(u, user_diff, start_date, end_date).deliver_now
+      end
     end
   end
 
@@ -70,6 +72,8 @@ class User < ApplicationRecord
     u = User.find_by(email: email)
     user_settings = JSON.parse(u.subject_settings)
     user_diff = latest_diff.select { |course| user_settings.include? course['department'] }
-    MainMailer.send_update(u, user_diff, start_date, end_date).deliver_now
+    if user_diff.length > 0
+      MainMailer.send_update(u, user_diff, start_date, end_date).deliver_now
+    end
   end
 end

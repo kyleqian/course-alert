@@ -59,9 +59,10 @@ Rails.application.configure do
 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'https://ec-updater.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host: 'https://ec-updater.herokuapp.com' }
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
+    domain:               'mail.google.com',
     port:                 587,
     user_name:            'testingprivateryan@gmail.com',
     password:             'testingtesting123',
