@@ -12,7 +12,8 @@ namespace :ec do
   task :dd => :environment do
     toolkit = MainToolkit.new
     toolkit.download_latest_xml()
-    toolkit.create_latest_diff(true)
+    has_new_courses = toolkit.create_latest_diff()
+    toolkit.move_latest_xml_to_deleted_folder if !has_new_courses
   end
 
   task :send_all => :environment do

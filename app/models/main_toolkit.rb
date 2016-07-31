@@ -42,7 +42,7 @@ class MainToolkit
   end
 
   # Creates a JSON of diffs with the two latest XMLs, and saves result to Dropbox
-  def create_latest_diff(delete_last_xml_if_no_diff=false)
+  def create_latest_diff
     response = get_two_latest_xmls_from_dp()
 
     puts "Parsing XMLs with Nokogiri..."
@@ -77,22 +77,21 @@ class MainToolkit
       puts "Done generating diff!"
       return true
     else
-      if delete_last_xml_if_no_diff
-        puts "Moving latest XML from main folder..."
-        move_xml_to_deleted_folder(response[:curr_xml_name])
-      end
       puts "No new courses!"
       return false
     end
   end
 
+  def move_latest_xml_to_deleted_folder
+    puts "Moving latest XML from main folder..."
+    curr_xml_name = get_two_latest_xmls_from_dp()[:curr_xml_name]
+    @dp_client.file_move("xmls/#{curr_xml_name}.xml", "/xmls/deleted_xmls/#{curr_xml_name}.xml")
+    puts "Finished moving!"
+  end
+
   ##############################
   private
   ##############################
-
-  def move_xml_to_deleted_folder(xml_name)
-    @dp_client.file_move("xmls/#{xml_name}.xml", "/xmls/deleted_xmls/#{xml_name}.xml")
-  end
 
   # returns hash with 2 latest XMLs and their names
   def get_two_latest_xmls_from_dp
