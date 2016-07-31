@@ -37,12 +37,12 @@ class MainToolkit
 
     puts "Writing to Dropbox..."
     filename = "courses~#{Time.now.iso8601.split('.')[0].gsub(':', '-')}"
-    write_to_dp("XMLs/#{filename}.xml", xml_file)
+    @dp_client.put_file("xmls/#{filename}.xml", xml_file)
     puts "Done writing!"
   end
 
   # Creates a JSON of diffs with the two latest XMLs, and saves result to Dropbox
-  def create_latest_diff
+  def create_latest_diff(delete_last_xml_if_no_diff=false)
     response = get_two_latest_xmls_from_dp()
 
     puts "Parsing XMLs with Nokogiri..."
@@ -73,10 +73,14 @@ class MainToolkit
     if new_courses.length > 0
       puts "Writing diff to Dropbox..."
       output_filename = "diff~#{response[:prev_xml_name]}~#{response[:curr_xml_name]}"
-      write_to_dp("diffs/#{output_filename}.json", JSON.pretty_generate(new_courses))
+      @dp_client.put_file("diffs/#{output_filename}.json", JSON.pretty_generate(new_courses))
       puts "Done generating diff!"
       return true
     else
+      if delete_last_xml_if_no_diff
+        puts "Moving latest XML from main folder..."
+        move_xml_to_deleted_folder(response[:curr_xml_name])
+      end
       puts "No new courses!"
       return false
     end
@@ -86,14 +90,14 @@ class MainToolkit
   private
   ##############################
 
-  def write_to_dp(path, file)
-    @dp_client.put_file(path, file)
+  def move_xml_to_deleted_folder(xml_name)
+    @dp_client.file_move("xmls/#{xml_name}.xml", "/xmls/deleted_xmls/#{xml_name}.xml")
   end
 
   # returns hash with 2 latest XMLs and their names
   def get_two_latest_xmls_from_dp
     puts "Getting XMLs from Dropbox..."
-    all_xmls = @dp_client.metadata('/XMLs')['contents'].sort_by! { |x| Time.parse(x['client_mtime']) }.reverse!
+    all_xmls = @dp_client.metadata('/xmls')['contents'].select! { |x| !x['is_dir'] }.sort_by! { |x| Time.parse(x['client_mtime']) }.reverse!
 
     raise "Need at least 2 XMLs!" unless all_xmls.length >= 2
 
