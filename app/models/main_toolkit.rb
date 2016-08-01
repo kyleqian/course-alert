@@ -96,7 +96,7 @@ class MainToolkit
   # returns hash with 2 latest XMLs and their names
   def get_two_latest_xmls_from_dp
     puts "Getting XMLs from Dropbox..."
-    all_xmls = @dp_client.metadata('/xmls')['contents'].select! { |x| !x['is_dir'] }.sort_by! { |x| Time.parse(x['client_mtime']) }.reverse!
+    all_xmls = @dp_client.metadata('/xmls')['contents'].select { |x| !x['is_dir'] }.sort_by! { |x| Time.parse(x['client_mtime']) }.reverse!
 
     raise "Need at least 2 XMLs!" unless all_xmls.length >= 2
 
