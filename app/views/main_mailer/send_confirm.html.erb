@@ -1,7 +1,7 @@
-<% if !@user.subscribed %>
-  You've recently signed up for course updates.
+<% if @user.subscribed %>
+  You've recently updated your settings for course updates.
 <% else %>
-  You've recently updated your settings.
+  You've recently signed up for course updates.
 <% end %>
 Click the following link to confirm:
 <br><br>
@@ -9,4 +9,8 @@ Click the following link to confirm:
             action: 'update',
             pid: @user.public_id) %>
 <br><br>
-Thanks for subscribing!
+<% if @user.subscribed %>
+  I'll let you know if anything comes up!
+<% else %>
+  Thanks for subscribing!
+<% end %>
