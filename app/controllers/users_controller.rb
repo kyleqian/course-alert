@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def login
-    # param passed from frontend
+    # Param passed from frontend JavaScript (before actually submitting)
     @user = User.find_by(email: params[:email])
     # TODO: update this to not use defaults
     load_departments = (@user && @user.subject_settings != '[]') ? JSON.parse(@user.subject_settings) : UrlHelper.get_default_departments
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def submit
-    # param passed from form
+    # Param passed from form
     @user = User.find_by(email: user_params[:email])
     if @user
       @user.pending_subject_settings = user_params[:pending_subject_settings]
@@ -20,48 +20,76 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
     end
 
-    # ERROR: if invalid
     if @user.valid?
       @user.save!
       MainMailer.send_confirm(@user).deliver_now
       redirect_to controller: :users, action: :confirmation, pid: @user.public_id
+    else
+      redirect_to '/error'
+      return
     end
   end
 
   def confirmation
-    # ERROR: if no pid or invalid
+    unless params[:pid]
+      redirect_to '/error'
+      return
+    end
+
     @user = User.find_by(public_id: params[:pid])
+    unless @user
+      redirect_to '/error'
+      return
+    end
   end
 
+  # Applies new settings and sets :verify and :subscribe to true
   def update
-    # apply new settings and set verify and subscribe to true
-    @user = User.find_by(public_id: params[:pid])
+    unless params[:pid]
+      redirect_to '/error'
+      return
+    end
 
-    # ERROR: if no user or invalid user
-    if @user
-      if @user.pending_subject_settings != '[]'
-        @user.subject_settings = @user.pending_subject_settings
-        @user.pending_subject_settings = '[]'
-      end
-      @user.verified = true
-      @user.subscribed = true
-      if @user.valid?
-        @user.save!
-      end
+    @user = User.find_by(public_id: params[:pid])
+    unless @user
+      redirect_to '/error'
+      return
+    end
+
+    if @user.pending_subject_settings != '[]'
+      @user.subject_settings = @user.pending_subject_settings
+      @user.pending_subject_settings = '[]'
+    end
+    @user.verified = true
+    @user.subscribed = true
+
+    if @user.valid?
+      @user.save!
+    else
+      redirect_to '/error'
+      return
     end
   end
 
   def unsubscribe
-    # ERROR: if no pid or invalid
-    @user = User.find_by(public_id: params[:pid])
+    unless params[:pid]
+      redirect_to '/error'
+      return
+    end
 
-    # ERROR: if no user or invalid user
-    if @user
-      @user.pending_subject_settings = '[]'
-      @user.subscribed = false
-      if @user.valid?
-        @user.save!
-      end
+    @user = User.find_by(public_id: params[:pid])
+    unless @user
+      redirect_to '/error'
+      return
+    end
+
+    @user.pending_subject_settings = '[]'
+    @user.subscribed = false
+    if @user.valid?
+      @user.save!
+    else
+      redirect_to '/error'
+      return
     end
   end
 
