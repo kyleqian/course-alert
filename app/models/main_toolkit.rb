@@ -43,7 +43,7 @@ class MainToolkit
 
   # Creates a JSON of diffs with two specifed XMLs, and saves result to Dropbox
   # No XMLs given runs it on the two latest XMLs (daily)
-  def create_diff(prev_xml_name = nil, curr_xml_name = nil)
+  def create_diff(prev_xml_name=nil, curr_xml_name=nil)
     daily = !(prev_xml_name and curr_xml_name)
 
     if daily
@@ -83,14 +83,15 @@ class MainToolkit
       end
     end
 
+    puts "Writing diff to Dropbox..."
+    output_filename = "diff~#{prev_xml_name}~#{curr_xml_name}"
+    if daily
+      output_filename = 'daily_diffs/' + output_filename
+    end
+    @dp_client.put_file("diffs/#{output_filename}.json", JSON.pretty_generate(new_courses))
+    puts "Done generating diff!"
+
     if new_courses.length > 0
-      puts "Writing diff to Dropbox..."
-      output_filename = "diff~#{prev_xml_name}~#{curr_xml_name}"
-      if daily
-        output_filename = 'daily_diffs/' + output_filename
-      end
-      @dp_client.put_file("diffs/#{output_filename}.json", JSON.pretty_generate(new_courses))
-      puts "Done generating diff!"
       return true
     else
       puts "No new courses!"
