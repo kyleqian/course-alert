@@ -50,10 +50,11 @@ input.form-control, input.form-control:focus {
 // Link pages
 
 .link-container {
-  text-align: center;
+  text-align: left;
   position: absolute;
   width: 100%;
   top: 20%;
+  left: 20%;
 }
 
 .link-title {
@@ -61,7 +62,7 @@ input.form-control, input.form-control:focus {
 }
 
 .link-text {
-  margin-top: 10px;
+  margin-top: 30px;
   margin-bottom: 10px;
   font-size: 1.8vh;
 }
