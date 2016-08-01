@@ -1,9 +1,10 @@
+Greetings from Course Alert!
+<br><br>
 <% if @user.subscribed %>
-  You've recently updated your settings for course updates.
+  Please click the following link to confirm your subscription:
 <% else %>
-  You've recently signed up for course updates.
+  Please click the following link to confirm your new settings:
 <% end %>
-Click the following link to confirm:
 <br><br>
 <%= url_for(controller: 'users',
             action: 'update',
