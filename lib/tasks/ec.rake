@@ -6,13 +6,13 @@ namespace :ec do
 
   task :diff => :environment do
     toolkit = MainToolkit.new
-    toolkit.create_latest_diff()
+    toolkit.create_diff()
   end
 
   task :dd => :environment do
     toolkit = MainToolkit.new
     toolkit.download_latest_xml()
-    toolkit.create_latest_diff()
+    toolkit.create_diff()
   end
 
   task :send_all => :environment do
