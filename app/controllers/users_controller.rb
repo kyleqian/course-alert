@@ -5,9 +5,10 @@ class UsersController < ApplicationController
 
   def login
     # Param passed from frontend JavaScript (before actually submitting)
-    @user = User.find_by(email: params[:email])
-    # TODO: update this to not use defaults
-    load_departments = (@user && @user.subject_settings != '[]') ? JSON.parse(@user.subject_settings) : UrlHelper.get_default_departments
+    email = params[:email].strip
+    @user = User.find_by(email: email)
+    
+    load_departments = @user ? JSON.parse(@user.subject_settings) : []
     render json: load_departments.to_json
   end
 
