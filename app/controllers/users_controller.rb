@@ -58,7 +58,6 @@ class UsersController < ApplicationController
     # ERROR: if no user or invalid user
     if @user
       @user.pending_subject_settings = '[]'
-      @user.subject_settings = '[]'
       @user.subscribed = false
       if @user.valid?
         @user.save!
