@@ -1,4 +1,4 @@
-$(document).on('ready page:load', function () {
+$(function() {
 
   //////////////////////////////////
   // PARSLEY MULTISTEP VALIDATION //
