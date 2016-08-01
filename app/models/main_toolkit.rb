@@ -41,13 +41,26 @@ class MainToolkit
     puts "Done writing!"
   end
 
-  # Creates a JSON of diffs with the two latest XMLs, and saves result to Dropbox
-  def create_latest_diff
-    response = get_two_latest_xmls_from_dp()
+  # Creates a JSON of diffs with two specifed XMLs, and saves result to Dropbox
+  # No XMLs given runs it on the two latest XMLs (daily)
+  def create_diff(prev_xml_name = nil, curr_xml_name = nil)
+    daily = !(prev_xml_name and curr_xml_name)
+
+    if daily
+      response = get_two_latest_xmls_from_dp()
+
+      prev_xml = response[:prev_xml]
+      prev_xml_name = response[:prev_xml_name]
+      curr_xml = response[:curr_xml]
+      curr_xml_name = response[:curr_xml_name]
+    else
+      prex_xml = @dp_client.get_file("/xmls/#{prev_xml_name}.xml")
+      curr_xml = @dp_client.get_file("/xmls/#{curr_xml_name}.xml")
+    end
 
     puts "Parsing XMLs with Nokogiri..."
-    curr_courses = Nokogiri::XML(response[:curr_xml]).css('course')
-    prev_courses = Nokogiri::XML(response[:prev_xml]).css('course')
+    curr_courses = Nokogiri::XML(curr_xml).css('course')
+    prev_courses = Nokogiri::XML(prev_xml).css('course')
     puts "Prev courses: #{prev_courses.length}"
     puts "Curr courses: #{curr_courses.length}"
 
@@ -72,7 +85,10 @@ class MainToolkit
 
     if new_courses.length > 0
       puts "Writing diff to Dropbox..."
-      output_filename = "diff~#{response[:prev_xml_name]}~#{response[:curr_xml_name]}"
+      output_filename = "diff~#{prev_xml_name}~#{curr_xml_name}"
+      if daily
+        output_filename = 'daily_diffs/' + output_filename
+      end
       @dp_client.put_file("diffs/#{output_filename}.json", JSON.pretty_generate(new_courses))
       puts "Done generating diff!"
       return true
@@ -93,7 +109,7 @@ class MainToolkit
   private
   ##############################
 
-  # returns hash with 2 latest XMLs and their names
+  # Returns hash with 2 latest XMLs and their names
   def get_two_latest_xmls_from_dp
     puts "Getting XMLs from Dropbox..."
     all_xmls = @dp_client.metadata('/xmls')['contents'].select { |x| !x['is_dir'] }.sort_by! { |x| Time.parse(x['client_mtime']) }.reverse!
