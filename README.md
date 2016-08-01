@@ -1,1 +1,1 @@
-# ec-updater
+# course-alert
