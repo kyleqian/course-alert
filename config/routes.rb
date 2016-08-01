@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   get 'confirmation' => 'users#confirmation'
   get 'update' => 'users#update'
   get 'unsubscribe' => 'users#unsubscribe'
+
+  match '/404', to: "errors#generic", via: :all
+  match '/500', to: "errors#generic", via: :all
 end
