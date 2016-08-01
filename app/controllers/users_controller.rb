@@ -6,8 +6,9 @@ class UsersController < ApplicationController
   def login
     # param passed from frontend
     @user = User.find_by(email: params[:email])
-    default_departments = (@user && @user.subject_settings != '[]') ? JSON.parse(@user.subject_settings) : UrlHelper.get_default_departments
-    render json: default_departments.to_json
+    # TODO: update this to not use defaults
+    load_departments = (@user && @user.subject_settings != '[]') ? JSON.parse(@user.subject_settings) : UrlHelper.get_default_departments
+    render json: load_departments.to_json
   end
 
   def submit
@@ -36,12 +37,29 @@ class UsersController < ApplicationController
     # apply new settings and set verify and subscribe to true
     @user = User.find_by(public_id: params[:pid])
 
-    # ERROR: if no user
+    # ERROR: if no user or invalid user
     if @user
-      @user.subject_settings = @user.pending_subject_settings
+      if @user.pending_subject_settings != '[]'
+        @user.subject_settings = @user.pending_subject_settings
+        @user.pending_subject_settings = '[]'
+      end
       @user.verified = true
       @user.subscribed = true
+      if @user.valid?
+        @user.save!
+      end
+    end
+  end
+
+  def unsubscribe
+    # ERROR: if no pid or invalid
+    @user = User.find_by(public_id: params[:pid])
+
+    # ERROR: if no user or invalid user
+    if @user
       @user.pending_subject_settings = '[]'
+      @user.subject_settings = '[]'
+      @user.subscribed = false
       if @user.valid?
         @user.save!
       end

@@ -38,7 +38,7 @@ $(document).on('ready page:load', function () {
 
   function showCheckboxes(email) {
     // POST to get user settings, or default settings if new user
-    $.post('/users/login', {'email': email}, function(data, status) {
+    $.post('/login', {'email': email}, function(data, status) {
       if (status == "success" && Array.isArray(data)) {
         
         // Loads checkboxes
