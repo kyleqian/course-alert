@@ -2,17 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// HOME
 .subject-settings-section {
   display: none;
 }
 
-.main-container {
-  margin: 0 auto;
-  width: 60%;
-}
-
 .header {
   text-align: center;
+}
+
+.home-container {
+  margin: 0 auto;
+  width: 60%;
 }
 
 // Get rid of yellow highlighting for autocomplete
@@ -44,4 +45,23 @@ input.form-control, input.form-control:focus {
   position: relative;
   display: inline-block;
   width: 49%;
+}
+
+// Link pages
+
+.link-container {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 20%;
+}
+
+.link-title {
+  font-size: 7vh;
+}
+
+.link-text {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.8vh;
 }

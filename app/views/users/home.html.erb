@@ -1,47 +1,49 @@
-<div class="header">
-  <h1>ExploreCourses Updater!</h1>
-</div>
+<div class="home-container">
+  <div class="header">
+    <h1>ExploreCourses Updater!</h1>
+  </div>
 
-<div class="form-container">
-  <%= simple_form_for @user, url: '/users/submit', html: { id: 'main-form' } do |f| %>
+  <div class="form-container">
+    <%= simple_form_for @user, url: '/users/submit', html: { id: 'main-form' } do |f| %>
 
-    <div class="form-section email-section">
-      <%= f.input :email,
-        label: false,
-        placeholder: 'name@example.com',
-        class: 'form-control',
-        required: ''
-      %>
-    </div>
+      <div class="form-section email-section">
+        <%= f.input :email,
+          label: false,
+          placeholder: 'name@example.com',
+          class: 'form-control',
+          required: ''
+        %>
+      </div>
 
-    <div class="form-navigation">
-      <button type="button" class="next btn btn-default">Update settings</button>
-      <input type="submit" class="btn btn-success">
-      <span class="clearfix"></span>
-    </div>
+      <div class="form-navigation">
+        <button type="button" class="next btn btn-default">Update settings</button>
+        <input type="submit" class="btn btn-success">
+        <span class="clearfix"></span>
+      </div>
 
-    <div class="form-section subject-settings-section">
-      <% UrlHelper.get_departments.each do |school| %>
-        <div class="col-1">
-          <%= f.input :pending_subject_settings,
-            collection: Hash[school['departments'].select { |d| d['col'] == 1 }.collect { |d| ["#{d['name']} (#{d['code']})", "#{d['code']}"] }],
-            label: school['school'],
-            input_html: { multiple: true },
-            required: false,
-            as: :check_boxes
-          %>
-        </div>
+      <div class="form-section subject-settings-section">
+        <% UrlHelper.get_departments.each do |school| %>
+          <div class="col-1">
+            <%= f.input :pending_subject_settings,
+              collection: Hash[school['departments'].select { |d| d['col'] == 1 }.collect { |d| ["#{d['name']} (#{d['code']})", "#{d['code']}"] }],
+              label: school['school'],
+              input_html: { multiple: true },
+              required: false,
+              as: :check_boxes
+            %>
+          </div>
 
-        <div class="col-2">
-          <%= f.input :pending_subject_settings,
-            collection: Hash[school['departments'].select { |d| d['col'] == 2 }.collect { |d| ["#{d['name']} (#{d['code']})", "#{d['code']}"] }],
-            label: false,
-            input_html: { multiple: true },
-            required: false,
-            as: :check_boxes
-          %>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
+          <div class="col-2">
+            <%= f.input :pending_subject_settings,
+              collection: Hash[school['departments'].select { |d| d['col'] == 2 }.collect { |d| ["#{d['name']} (#{d['code']})", "#{d['code']}"] }],
+              label: false,
+              input_html: { multiple: true },
+              required: false,
+              as: :check_boxes
+            %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>

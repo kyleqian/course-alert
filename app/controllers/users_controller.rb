@@ -13,28 +13,30 @@ class UsersController < ApplicationController
   def submit
     # param passed from form
     @user = User.find_by(email: user_params[:email])
-    status = nil
     if @user
-      status = 'update'
       @user.pending_subject_settings = user_params[:pending_subject_settings]
     else
-      status = 'new'
       @user = User.new(user_params)
     end
 
+    # ERROR: if invalid
     if @user.valid?
       @user.save!
-      MainMailer.send_confirm(@user, status).deliver_now
-      redirect_to controller: :users, action: :confirmation, s: status
+      MainMailer.send_confirm(@user).deliver_now
+      redirect_to controller: :users, action: :confirmation, pid: @user.public_id
     end
   end
 
   def confirmation
+    # ERROR: if no pid or invalid
+    @user = User.find_by(public_id: params[:pid])
   end
 
   def update
     # apply new settings and set verify and subscribe to true
     @user = User.find_by(public_id: params[:pid])
+
+    # ERROR: if no user
     if @user
       @user.subject_settings = @user.pending_subject_settings
       @user.verified = true

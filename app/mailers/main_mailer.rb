@@ -1,8 +1,7 @@
 class MainMailer < ApplicationMailer
-  def send_confirm(user, status)
+  def send_confirm(user)
     @user = user
-    @status = status
-    subject = status == 'new' ? "Confirm your subscription" : "Confirming your update"
+    subject = @user.subscribed ? "Confirming your update" : "Confirm your subscription" 
     mail(
           to: @user.email,
           subject: subject
