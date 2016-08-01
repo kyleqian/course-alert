@@ -36,7 +36,7 @@ class MainToolkit
     xml_file = Net::HTTP.get(uri)
 
     puts "Writing to Dropbox..."
-    filename = "courses~#{Time.now.iso8601.split('.')[0].gsub(':', '-')}"
+    filename = "courses~#{Time.now.getlocal('-08:00').iso8601.split('.')[0].gsub(':', '-')}"
     @dp_client.put_file("xmls/#{filename}.xml", xml_file)
     puts "Done writing!"
   end

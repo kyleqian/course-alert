@@ -28,7 +28,7 @@ class SubjectScraper
     # TODO: I'm currently manually deleting some of the last elements
     # TODO: Also manually turning default courses on and off
 
-    filename = "departments~#{Time.now.iso8601.split('.')[0].gsub(':', '-')}"
+    filename = "departments~#{Time.now.getlocal('-08:00').iso8601.split('.')[0].gsub(':', '-')}"
     File.open("#{filename}.json", "w") do |f|
       f.write(JSON.pretty_generate(parsed_listing))
     end
