@@ -1,8 +1,12 @@
-<% if @status == 'new' %>
-  Click to subscribe:
+<% if !@user.subscribed %>
+  You've recently signed up for course updates.
 <% else %>
-  Click to update:
+  You've recently updated your settings.
 <% end %>
+Click the following link to confirm:
+<br><br>
 <%= url_for(controller: 'users',
             action: 'update',
             pid: @user.public_id) %>
+<br><br>
+Thanks for subscribing!
