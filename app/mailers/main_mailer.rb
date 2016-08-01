@@ -15,7 +15,7 @@ class MainMailer < ApplicationMailer
     @end_date = end_date
     mail(
           to: @user.email,
-          subject: 'New courses!'
+          subject: 'New courses added to ExploreCourses!'
         )
   end
 end
