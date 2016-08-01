@@ -6,3 +6,9 @@
     <%= "#{course['description']}" %>
   </p>
 <% end %>
+<br><br>
+--------
+<br><br>
+Make changes to your subscription list through <%= link_to nil, 'coursealert.co' %>, same as signing up. 
+<br>
+To unsubscribe, <%= link_to 'click here', controller: :users, action: :unsubscribe, pid: @user.public_id %>.

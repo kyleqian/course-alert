@@ -6,9 +6,7 @@ Greetings from Course Alert!
   Please click to confirm your subscription:
 <% end %>
 <br>
-<%= url_for(controller: :users,
-            action: :update,
-            pid: @user.public_id) %>
+<%= link_to nil, controller: :users, action: :update, pid: @user.public_id %>
 <br><br>
 <% if @user.subscribed %>
   I'll let you know if anything new comes up!
