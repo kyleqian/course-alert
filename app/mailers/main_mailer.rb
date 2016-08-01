@@ -1,7 +1,7 @@
 class MainMailer < ApplicationMailer
   def send_confirm(user)
     @user = user
-    subject = @user.subscribed ? "Please confirm your new settings" : "Please confirm your subscription" 
+    subject = @user.subscribed ? "Please confirm your updated settings" : "Please confirm your subscription" 
     mail(
           to: @user.email,
           subject: subject
@@ -15,7 +15,7 @@ class MainMailer < ApplicationMailer
     @end_date = end_date
     mail(
           to: @user.email,
-          subject: 'New courses added to ExploreCourses!'
+          subject: 'You have new courses!'
         )
   end
 end

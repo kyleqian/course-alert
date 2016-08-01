@@ -1,17 +1,17 @@
 Greetings from Course Alert!
 <br><br>
 <% if @user.subscribed %>
-  Please click the following link to confirm your subscription:
+  Please click to confirm your recently updated settings (ignore this if you didn't):
 <% else %>
-  Please click the following link to confirm your new settings:
+  Please click to confirm your subscription:
 <% end %>
-<br><br>
-<%= url_for(controller: 'users',
-            action: 'update',
+<br>
+<%= url_for(controller: :users,
+            action: :update,
             pid: @user.public_id) %>
 <br><br>
 <% if @user.subscribed %>
-  I'll let you know if anything comes up!
+  I'll let you know if anything new comes up!
 <% else %>
   Thanks for subscribing!
 <% end %>
