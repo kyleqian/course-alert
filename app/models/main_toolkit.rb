@@ -20,7 +20,7 @@ class MainToolkit
   end
 
   def get_latest_diff
-    all_diffs = @dp_client.metadata('/diffs')['contents'].sort_by! { |x| Time.parse(x['client_mtime']) }.reverse!
+    all_diffs = @dp_client.metadata('/diffs')['contents'].select { |x| !x['is_dir'] }.sort_by! { |x| Time.parse(x['client_mtime']) }.reverse!
 
     raise "Need at least 1 diff!" unless all_diffs.length >= 1
 
