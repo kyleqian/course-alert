@@ -27,21 +27,20 @@ Rails.application.configure do
   end
 
   config.action_mailer.raise_delivery_errors = true
-
-  # Send mails in development
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    domain:               'mail.google.com',
-    port:                 587,
-    user_name:            'testingprivateryan@gmail.com',
-    password:             'testingtesting123',
-    authentication:       'plain',
+    address:              'smtp.zoho.com',
+    domain:               'coursealert.co',
+    port:                 465,
+    user_name:            Figaro.env.zh_user,
+    password:             Figaro.env.zh_pass,
+    authentication:       :plain,
+    ssl:                  true,
+    tls:                  true,
     enable_starttls_auto: true
   }
-
 
   config.action_mailer.perform_caching = false
 

@@ -1,4 +1,6 @@
 class MainMailer < ApplicationMailer
+  default from: 'Course Alert <admin@coursealert.co>'
+
   def send_confirm(user)
     @user = user
     subject = @user.subscribed ? "Please confirm your updated settings" : "Please confirm your subscription" 

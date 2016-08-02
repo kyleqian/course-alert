@@ -1,6 +1,8 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.exceptions_app = self.routes
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -61,12 +63,14 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { host: 'http://coursealert.co' }
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    domain:               'mail.google.com',
-    port:                 587,
-    user_name:            'testingprivateryan@gmail.com',
-    password:             'testingtesting123',
-    authentication:       'plain',
+    address:              'smtp.zoho.com',
+    domain:               'coursealert.co',
+    port:                 465,
+    user_name:            Figaro.env.zh_user,
+    password:             Figaro.env.zh_pass,
+    authentication:       :plain,
+    ssl:                  true,
+    tls:                  true,
     enable_starttls_auto: true
   }
 
