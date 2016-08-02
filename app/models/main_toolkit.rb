@@ -54,13 +54,13 @@ class MainToolkit
       curr_xml = response[:curr_xml]
       curr_xml_name = response[:curr_xml_name]
     else
-      prex_xml = @dp_client.get_file("/xmls/#{prev_xml_name}.xml")
+      prev_xml = @dp_client.get_file("/xmls/#{prev_xml_name}.xml")
       curr_xml = @dp_client.get_file("/xmls/#{curr_xml_name}.xml")
     end
 
     puts "Parsing XMLs with Nokogiri..."
-    curr_courses = Nokogiri::XML(curr_xml).css('course')
     prev_courses = Nokogiri::XML(prev_xml).css('course')
+    curr_courses = Nokogiri::XML(curr_xml).css('course')
     puts "Prev courses: #{prev_courses.length}"
     puts "Curr courses: #{curr_courses.length}"
 
