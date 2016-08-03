@@ -1,37 +1,35 @@
 $(document).on('turbolinks:load', function() {
-  
+
   //////////////////////////////////
   // PARSLEY MULTISTEP VALIDATION //
   //////////////////////////////////
 
+  var $loginButton = $('#login-button');
+  var $submitButton = $('#submit-button');  
+  var $userEmail = $('#user_email');
   var $sections = $('.form-section');
+  $submitButton.attr('disabled', '');
 
-  function navigateTo(index) {
-    // Mark the current section with the class 'current'
-    $sections
-      .removeClass('current')
-      .eq(index)
-        .addClass('current');
-    // Show only the navigation buttons that make sense for the current section:
-    var atTheEnd = index >= $sections.length - 1;
-    if (atTheEnd) $('.form-navigation .next').attr('disabled', '');
-    // $('.form-navigation .next').toggle(!atTheEnd);
-    $('.form-navigation [type=submit]').toggle(atTheEnd);
-  }
+  // Prepare sections by setting the `data-parsley-group` attribute to 'block-0', 'block-1', etc.
+  $sections.each(function(index, section) {
+    $(section).find(':input').attr('data-parsley-group', 'block-' + index);
+  });
 
-  function curIndex() {
-    // Return the current index by looking at which section has the class 'current'
-    return $sections.index($sections.filter('.current'));
-  }
-
-  $('.form-navigation .next').click(function() {
-    submitEmail();
+  $loginButton.click(function() {
+    tryToLogin();
   });
 
   // Submits email and shows checkboxes iff current block validates
-  function submitEmail() {
-    if ($('#main-form').parsley().validate({group: 'block-' + curIndex()})) {
-      var email = $('#user_email').val();
+  function tryToLogin() {
+    if ($('#main-form').parsley().validate({group: 'block-0'})) {
+      // Disable login button
+      $loginButton.attr('disabled', '');
+
+      // Disable email field
+      $userEmail.attr('readonly', 'readonly');
+
+      // Check email with AJAX
+      var email = $userEmail.val();
       showCheckboxes(email);
     }
   }
@@ -46,31 +44,21 @@ $(document).on('turbolinks:load', function() {
           $('input[value="' + data[i] + '"]').prop('checked', true);
         }
 
-        // Shows submit button
-        navigateTo(curIndex() + 1);
-
-        // Greys out email field
-        $('#user_email').attr('readonly', 'readonly');
-
         // Shows checkboxes
         $('.subject-settings-section').show();
+
+        // Enable submit button
+        $submitButton.removeAttr('disabled');
       }
     }, 'json');
   }
 
-  // Prepare sections by setting the `data-parsley-group` attribute to 'block-0', 'block-1', etc.
-  $sections.each(function(index, section) {
-    $(section).find(':input').attr('data-parsley-group', 'block-' + index);
-  });
-
-  navigateTo(0); // Start at the beginning
-
   // Repurpose Enter key for inputting email
-  $('#user_email').on('keyup keypress', function (e) {
+  $userEmail.on('keyup keypress', function (e) {
     var key = e.keyCode || e.which;
     if (key == 13) {
       e.preventDefault();
-      submitEmail();
+      tryToLogin();
     }
   });
 });
