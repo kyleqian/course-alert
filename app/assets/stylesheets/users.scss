@@ -2,12 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'https://fonts.googleapis.com/css?family=Reem+Kufi';
+
 // HOME
-/*.subject-settings-section {
-  display: none;
-}*/
+.subject-settings-section {
+  font-family: 'Avenir', 'Helvtica', sans-serif;
+}
 
 .header {
+  font-size: 6vh;
+  font-family: 'Reem Kufi', sans-serif;
   text-align: center;
 }
 
@@ -38,7 +42,7 @@
 }
 
 .left-pane-contents {
-  width: 75%;
+  width: 80%;
 }
 
 .right-pane-contents {

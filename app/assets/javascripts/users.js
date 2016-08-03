@@ -68,9 +68,6 @@ $(document).on('turbolinks:load', function() {
           $('input[value="' + data[i] + '"]').prop('checked', true);
         }
 
-        // Shows checkboxes
-        // $('.subject-settings-section').show();
-
         // Enable submit button
         $submitButton.removeAttr('disabled');
       }
