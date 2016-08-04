@@ -1,7 +1,11 @@
-<p>New courses from <%= @start_date %> to <%= @end_date %></p>
+<p>Greetings from CourseAlert!
+<br>
+Here are freshly added courses from <%= @start_date %> to <%= @end_date %>:</p>
 <% @user_diff.each_with_index do |course, i| %>
   <p>
     <u><%= "#{i + 1}) " %><strong><%= "#{course['department']} #{course['code']}" %></strong><%= ": #{course['title']}" %></u>
+    <br>
+    <%= " (#{course['quarters'].join(', ').strip})" %>
     <br>
     <%= "#{course['description']}" %>
   </p>
