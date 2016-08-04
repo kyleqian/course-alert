@@ -2,7 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import 'https://fonts.googleapis.com/css?family=Reem+Kufi';
+@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
+
+// INSTRUCTIONS
+.instructions {
+  margin-top: 30px;
+  font-family: 'Avenir', 'Helvtica', sans-serif;
+}
+
+.instr-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+#how-do {
+  margin-top: 10px;
+}
+
+#what-do .instr-body {
+  padding-left: 1.5em;
+}
 
 // HOME
 
@@ -20,7 +39,8 @@
 
 .header {
   font-size: 48px;
-  font-family: 'Reem Kufi', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   text-align: center;
 }
 

@@ -5,7 +5,7 @@
         <div class="left-pane col-md-5">
           <div class="left-pane-contents">
             <div class="header">
-              CourseAlert
+              course alert
             </div>
 
             <div class="form-section email-section">
@@ -13,18 +13,46 @@
                 <div class="input-group">
                   <%= f.input_field :email,
                     label: false,
-                    placeholder: 'name@example.com',
+                    placeholder: 'your@email.com',
                     class: 'form-control',
                     required: ''
                   %>
 
                   <span class="input-group-btn">
-                    <button id="submit-btn" type="submit" class="btn btn-success">Apply settings!</button>
+                    <button id="submit-btn" type="submit" class="btn btn-success">Subscribe!</button>
                     <button id="login-btn" type="button" class="btn btn-default">Create/Login</button>
                   </span>
                 </div>
               </div>
             </div>
+
+            <div class="instructions">
+              <div id="what-do">
+                <div class="instr-title">
+                  what do
+                </div>
+                <div class="instr-body">
+                  <p>Every quarter, there are <strong>10+ weeks</strong> between Axess opening for enrollment and the drop deadline. Sign up to get lightweight email alerts instead so you don't miss out.</p>
+                  <p>Alerts go out once or twice a week, and only if I see anything new from your list. </p>
+                </div>
+              </div>
+
+              <div id="how-do">
+                <div class="instr-title">
+                  how do
+                </div>
+                <div class="instr-body">
+                  <ol>
+                    <li>Create/Login with email (either new or previously used)</li>
+                    <li>Check off the departments you'd want updates from</li>
+                    <li>Click "Subscribe"</li>
+                    <li>Confirm changes by clicking on email link</li>
+                    <li>Get updates!</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
