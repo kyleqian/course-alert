@@ -36,6 +36,7 @@ $(document).on('turbolinks:load', function() {
   // Submits email and shows checkboxes iff current block validates
   function tryToLogin() {
     if ($mainForm.parsley().validate({group: 'email'})) {
+      // Returns border for input field to original color
       $userEmail.css('border-color', '#ccc');
 
       // Disable login button
@@ -48,6 +49,7 @@ $(document).on('turbolinks:load', function() {
       var email = $userEmail.val();
       enableCheckboxes(email);
     } else {
+      // Red border for input field if invalid
       $userEmail.css('border-color', 'red');
     }
   }

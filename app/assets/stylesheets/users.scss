@@ -10,7 +10,7 @@
 }
 
 .header {
-  font-size: 6vh;
+  font-size: 48px;
   font-family: 'Reem Kufi', sans-serif;
   text-align: center;
 }
@@ -48,11 +48,6 @@
 .right-pane-contents {
   width: 100%;
 }
-
-/*.home-container {
-  margin: 0 auto;
-  width: 60%;
-}*/
 
 // Get rid of yellow highlighting for autocomplete
 
@@ -96,11 +91,11 @@ input.form-control, input.form-control:focus {
 }
 
 .link-title {
-  font-size: 7vh;
+  font-size: 48px;
 }
 
 .link-text {
   margin-top: 30px;
   margin-bottom: 10px;
-  font-size: 1.8vh;
+  font-size: 13px;
 }
