@@ -1,70 +1,5 @@
 [
   {
-    "school": "Graduate School of Business",
-    "departments": [
-      {
-        "name": "Accounting",
-        "code": "ACCT",
-        "col": 1,
-        "default": false
-      },
-      {
-        "name": "Economic Analysis & Policy",
-        "code": "MGTECON",
-        "col": 1,
-        "default": false
-      },
-      {
-        "name": "Finance",
-        "code": "FINANCE",
-        "col": 1,
-        "default": false
-      },
-      {
-        "name": "GSB General & Interdisciplinary",
-        "code": "GSBGEN",
-        "col": 1,
-        "default": false
-      },
-      {
-        "name": "Human Resource Management",
-        "code": "HRMGT",
-        "col": 1,
-        "default": false
-      },
-      {
-        "name": "Marketing",
-        "code": "MKTG",
-        "col": 2,
-        "default": false
-      },
-      {
-        "name": "Operations Information & Technology",
-        "code": "OIT",
-        "col": 2,
-        "default": false
-      },
-      {
-        "name": "Organizational Behavior",
-        "code": "OB",
-        "col": 2,
-        "default": false
-      },
-      {
-        "name": "Political Economics",
-        "code": "POLECON",
-        "col": 2,
-        "default": false
-      },
-      {
-        "name": "Strategic Management",
-        "code": "STRAMGT",
-        "col": 2,
-        "default": false
-      }
-    ]
-  },
-  {
     "school": "School of Earth, Energy and Environmental Sciences",
     "departments": [
       {
@@ -119,17 +54,6 @@
         "name": "Woods Institute for the Environment",
         "code": "ENVRINST",
         "col": 2,
-        "default": true
-      }
-    ]
-  },
-  {
-    "school": "School of Education",
-    "departments": [
-      {
-        "name": "Education",
-        "code": "EDUC",
-        "col": 1,
         "default": true
       }
     ]
@@ -751,6 +675,283 @@
     ]
   },
   {
+    "school": "Office of Vice Provost for Undergraduate Education",
+    "departments": [
+      {
+        "name": "Education as Self-Fashioning",
+        "code": "ESF",
+        "col": 1,
+        "default": false
+      },
+      {
+        "name": "Immersion in the Arts",
+        "code": "ITALIC",
+        "col": 1,
+        "default": false
+      },
+      {
+        "name": "Leadership Intensive",
+        "code": "LEAD",
+        "col": 1,
+        "default": true
+      },
+      {
+        "name": "Oral Communications",
+        "code": "ORALCOMM",
+        "col": 1,
+        "default": true
+      },
+      {
+        "name": "Overseas Studies General",
+        "code": "OSPGEN",
+        "col": 1,
+        "default": false
+      },
+      {
+        "name": "Overseas Studies in Australia",
+        "code": "OSPAUSTL",
+        "col": 1,
+        "default": false
+      },
+      {
+        "name": "Overseas Studies in Barcelona",
+        "code": "CASB",
+        "col": 1,
+        "default": false
+      },
+      {
+        "name": "Overseas Studies in Beijing",
+        "code": "OSPBEIJ",
+        "col": 1,
+        "default": false
+      },
+      {
+        "name": "Overseas Studies in Berlin",
+        "code": "OSPBER",
+        "col": 1,
+        "default": false
+      },
+      {
+        "name": "Overseas Studies in Cape Town",
+        "code": "OSPCPTWN",
+        "col": 1,
+        "default": false
+      },
+      {
+        "name": "Overseas Studies in Florence",
+        "code": "OSPFLOR",
+        "col": 1,
+        "default": false
+      },
+      {
+        "name": "Overseas Studies in Istanbul",
+        "code": "OSPISTAN",
+        "col": 1,
+        "default": false
+      },
+      {
+        "name": "Overseas Studies in Kyoto",
+        "code": "OSPKYOTO",
+        "col": 1,
+        "default": false
+      },
+      {
+        "name": "Overseas Studies in Kyoto",
+        "code": "KCJS",
+        "col": 2,
+        "default": false
+      },
+      {
+        "name": "Overseas Studies in Madrid",
+        "code": "OSPMADRD",
+        "col": 2,
+        "default": false
+      },
+      {
+        "name": "Overseas Studies in Oxford",
+        "code": "OSPOXFRD",
+        "col": 2,
+        "default": false
+      },
+      {
+        "name": "Overseas Studies in Paris",
+        "code": "OSPPARIS",
+        "col": 2,
+        "default": false
+      },
+      {
+        "name": "Overseas Studies in Santiago",
+        "code": "OSPSANTG",
+        "col": 2,
+        "default": false
+      },
+      {
+        "name": "ROTC Air Force",
+        "code": "ROTCAF",
+        "col": 2,
+        "default": false
+      },
+      {
+        "name": "ROTC Army",
+        "code": "ROTCARMY",
+        "col": 2,
+        "default": false
+      },
+      {
+        "name": "ROTC Navy",
+        "code": "ROTCNAVY",
+        "col": 2,
+        "default": false
+      },
+      {
+        "name": "Stanford in New York",
+        "code": "SINY",
+        "col": 2,
+        "default": false
+      },
+      {
+        "name": "Structured Liberal Education",
+        "code": "SLE",
+        "col": 2,
+        "default": false
+      },
+      {
+        "name": "Thinking Matters",
+        "code": "THINK",
+        "col": 2,
+        "default": false
+      },
+      {
+        "name": "Undergraduate Advising and Research",
+        "code": "UAR",
+        "col": 2,
+        "default": false
+      },
+      {
+        "name": "Writing & Rhetoric, Program in",
+        "code": "PWR",
+        "col": 2,
+        "default": false
+      }
+    ]
+  },
+  {
+    "school": "Office of Vice Provost for Teaching and Learning",
+    "departments": [
+      {
+        "name": "Teaching and Learning",
+        "code": "VPTL",
+        "col": 1,
+        "default": true
+      }
+    ]
+  },
+  {
+    "school": "Athletics, Physical Education, and Recreation",
+    "departments": [
+      {
+        "name": "Athletics, Club Sports, Martial Arts",
+        "code": "ATHLETIC",
+        "col": 1,
+        "default": true
+      },
+      {
+        "name": "Outdoor Education",
+        "code": "OUTDOOR",
+        "col": 1,
+        "default": true
+      },
+      {
+        "name": "Physical Education",
+        "code": "PE",
+        "col": 2,
+        "default": true
+      },
+      {
+        "name": "Wellness Education",
+        "code": "WELLNESS",
+        "col": 2,
+        "default": true
+      }
+    ]
+  },
+  {
+    "school": "School of Education",
+    "departments": [
+      {
+        "name": "Education",
+        "code": "EDUC",
+        "col": 1,
+        "default": true
+      }
+    ]
+  },
+  {
+    "school": "Graduate School of Business",
+    "departments": [
+      {
+        "name": "Accounting",
+        "code": "ACCT",
+        "col": 1,
+        "default": false
+      },
+      {
+        "name": "Economic Analysis & Policy",
+        "code": "MGTECON",
+        "col": 1,
+        "default": false
+      },
+      {
+        "name": "Finance",
+        "code": "FINANCE",
+        "col": 1,
+        "default": false
+      },
+      {
+        "name": "GSB General & Interdisciplinary",
+        "code": "GSBGEN",
+        "col": 1,
+        "default": false
+      },
+      {
+        "name": "Human Resource Management",
+        "code": "HRMGT",
+        "col": 1,
+        "default": false
+      },
+      {
+        "name": "Marketing",
+        "code": "MKTG",
+        "col": 2,
+        "default": false
+      },
+      {
+        "name": "Operations Information & Technology",
+        "code": "OIT",
+        "col": 2,
+        "default": false
+      },
+      {
+        "name": "Organizational Behavior",
+        "code": "OB",
+        "col": 2,
+        "default": false
+      },
+      {
+        "name": "Political Economics",
+        "code": "POLECON",
+        "col": 2,
+        "default": false
+      },
+      {
+        "name": "Strategic Management",
+        "code": "STRAMGT",
+        "col": 2,
+        "default": false
+      }
+    ]
+  },
+  {
     "school": "Law School",
     "departments": [
       {
@@ -1003,207 +1204,6 @@
         "code": "UROL",
         "col": 2,
         "default": false
-      }
-    ]
-  },
-  {
-    "school": "Office of Vice Provost for Undergraduate Education",
-    "departments": [
-      {
-        "name": "Education as Self-Fashioning",
-        "code": "ESF",
-        "col": 1,
-        "default": false
-      },
-      {
-        "name": "Immersion in the Arts",
-        "code": "ITALIC",
-        "col": 1,
-        "default": false
-      },
-      {
-        "name": "Leadership Intensive",
-        "code": "LEAD",
-        "col": 1,
-        "default": true
-      },
-      {
-        "name": "Oral Communications",
-        "code": "ORALCOMM",
-        "col": 1,
-        "default": true
-      },
-      {
-        "name": "Overseas Studies General",
-        "code": "OSPGEN",
-        "col": 1,
-        "default": false
-      },
-      {
-        "name": "Overseas Studies in Australia",
-        "code": "OSPAUSTL",
-        "col": 1,
-        "default": false
-      },
-      {
-        "name": "Overseas Studies in Barcelona",
-        "code": "CASB",
-        "col": 1,
-        "default": false
-      },
-      {
-        "name": "Overseas Studies in Beijing",
-        "code": "OSPBEIJ",
-        "col": 1,
-        "default": false
-      },
-      {
-        "name": "Overseas Studies in Berlin",
-        "code": "OSPBER",
-        "col": 1,
-        "default": false
-      },
-      {
-        "name": "Overseas Studies in Cape Town",
-        "code": "OSPCPTWN",
-        "col": 1,
-        "default": false
-      },
-      {
-        "name": "Overseas Studies in Florence",
-        "code": "OSPFLOR",
-        "col": 1,
-        "default": false
-      },
-      {
-        "name": "Overseas Studies in Istanbul",
-        "code": "OSPISTAN",
-        "col": 1,
-        "default": false
-      },
-      {
-        "name": "Overseas Studies in Kyoto",
-        "code": "OSPKYOTO",
-        "col": 1,
-        "default": false
-      },
-      {
-        "name": "Overseas Studies in Kyoto",
-        "code": "KCJS",
-        "col": 2,
-        "default": false
-      },
-      {
-        "name": "Overseas Studies in Madrid",
-        "code": "OSPMADRD",
-        "col": 2,
-        "default": false
-      },
-      {
-        "name": "Overseas Studies in Oxford",
-        "code": "OSPOXFRD",
-        "col": 2,
-        "default": false
-      },
-      {
-        "name": "Overseas Studies in Paris",
-        "code": "OSPPARIS",
-        "col": 2,
-        "default": false
-      },
-      {
-        "name": "Overseas Studies in Santiago",
-        "code": "OSPSANTG",
-        "col": 2,
-        "default": false
-      },
-      {
-        "name": "ROTC Air Force",
-        "code": "ROTCAF",
-        "col": 2,
-        "default": false
-      },
-      {
-        "name": "ROTC Army",
-        "code": "ROTCARMY",
-        "col": 2,
-        "default": false
-      },
-      {
-        "name": "ROTC Navy",
-        "code": "ROTCNAVY",
-        "col": 2,
-        "default": false
-      },
-      {
-        "name": "Stanford in New York",
-        "code": "SINY",
-        "col": 2,
-        "default": false
-      },
-      {
-        "name": "Structured Liberal Education",
-        "code": "SLE",
-        "col": 2,
-        "default": false
-      },
-      {
-        "name": "Thinking Matters",
-        "code": "THINK",
-        "col": 2,
-        "default": false
-      },
-      {
-        "name": "Undergraduate Advising and Research",
-        "code": "UAR",
-        "col": 2,
-        "default": false
-      },
-      {
-        "name": "Writing & Rhetoric, Program in",
-        "code": "PWR",
-        "col": 2,
-        "default": false
-      }
-    ]
-  },
-  {
-    "school": "Office of Vice Provost for Teaching and Learning",
-    "departments": [
-      {
-        "name": "Teaching and Learning",
-        "code": "VPTL",
-        "col": 1,
-        "default": true
-      }
-    ]
-  },
-  {
-    "school": "Athletics, Physical Education, and Recreation",
-    "departments": [
-      {
-        "name": "Athletics, Club Sports, Martial Arts",
-        "code": "ATHLETIC",
-        "col": 1,
-        "default": true
-      },
-      {
-        "name": "Outdoor Education",
-        "code": "OUTDOOR",
-        "col": 1,
-        "default": true
-      },
-      {
-        "name": "Physical Education",
-        "code": "PE",
-        "col": 2,
-        "default": true
-      },
-      {
-        "name": "Wellness Education",
-        "code": "WELLNESS",
-        "col": 2,
-        "default": true
       }
     ]
   }
