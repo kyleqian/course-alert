@@ -1,5 +1,5 @@
 class MainMailer < ApplicationMailer
-  default from: 'Course Alert <admin@coursealert.co>'
+  default from: 'CourseAlert <admin@coursealert.co>'
 
   def send_confirm(user)
     @user = user
