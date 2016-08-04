@@ -19,8 +19,8 @@
                   %>
 
                   <span class="input-group-btn">
-                    <button id="login-button" type="button" class="next btn btn-default">Login/Create</button>
-                    <input id="submit-button" type="submit" class="btn btn-success">
+                    <button id="submit-btn" type="submit" class="btn btn-success">Apply settings!</button>
+                    <button id="login-btn" type="button" class="btn btn-default">Create/Login</button>
                   </span>
                 </div>
               </div>
@@ -32,6 +32,10 @@
       <div class="col-md-7">
         <div class="right-pane">
           <div class="right-pane-contents">
+            <div class="select-buttons">
+              <button id="select-all-btn" type="button" class="btn btn-default">Select All</button>
+              <button id="deselect-all-btn" type="button" class="btn btn-default">Deselect All</button>
+            </div>
             <div class="form-section subject-settings-section">
               <% UrlHelper.get_departments.each do |school| %>
                 <div class="col-1">

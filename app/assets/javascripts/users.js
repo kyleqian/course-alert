@@ -5,13 +5,17 @@ $(document).on('turbolinks:load', function() {
   //////////////////////////////////
 
   var $mainForm = $('#main-form');
-  var $loginButton = $('#login-button');
-  var $submitButton = $('#submit-button');  
+  var $loginButton = $('#login-btn');
+  var $selectAllButton = $('#select-all-btn');
+  var $deselectAllButton = $('#deselect-all-btn');
+  var $submitButton = $('#submit-btn');
   var $userEmail = $('#user_email');
   var $checkBoxes = $('.subject-settings-section input');
-  $submitButton.attr('disabled', '');
+  $selectAllButton.attr('disabled', '');
+  $deselectAllButton.attr('disabled', '');
   $userEmail.attr('data-parsley-errors-messages-disabled', '');
   $userEmail.attr('data-parsley-group', 'email');
+  $submitButton.attr('disabled', '');
 
   // Displays greyed out checkboxes
   $checkBoxes.each(function() {
@@ -19,6 +23,20 @@ $(document).on('turbolinks:load', function() {
     $this.attr('disabled', '');
     $this.prop('checked', true);
   });
+
+  $selectAllButton.click(function() {
+    $checkBoxes.each(function() {
+      $this = $(this);
+      $this.prop('checked', true);
+    });
+  });
+
+  $deselectAllButton.click(function() {
+    $checkBoxes.each(function() {
+      $this = $(this);
+      $this.prop('checked', false);
+    });
+  })
 
   $loginButton.click(function() {
     tryToLogin();
@@ -37,10 +55,14 @@ $(document).on('turbolinks:load', function() {
   function tryToLogin() {
     if ($mainForm.parsley().validate({group: 'email'})) {
       // Returns border for input field to original color
-      $userEmail.css('border-color', '#ccc');
+      $userEmail.css('border-color', '#ccc;');
 
-      // Disable login button
-      $loginButton.attr('disabled', '');
+      // Remove login button
+      $loginButton.remove();
+
+      // Enable selecting buttons
+      $selectAllButton.removeAttr('disabled');
+      $deselectAllButton.removeAttr('disabled');
 
       // Disable email field
       $userEmail.attr('readonly', '');
@@ -73,6 +95,7 @@ $(document).on('turbolinks:load', function() {
 
         // Enable submit button
         $submitButton.removeAttr('disabled');
+        $submitButton.show();
       }
     }, 'json');
   }

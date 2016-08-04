@@ -9,7 +9,7 @@
 @media (min-width: 992px) {
   .left-pane {
     position: fixed !important;
-    margin-top: 15%;
+    margin-top: 10%;
   }
 }
 
@@ -34,31 +34,32 @@
 }
 
 .left-pane-contents {
-  width: 80%;
+  width: 70%;
 }
 
 .right-pane-contents {
   width: 90%;
 }
 
-// Get rid of yellow highlighting for autocomplete
+.select-buttons {
+  margin-bottom: 15px;
+}
 
+#submit-btn {
+  display: none;
+}
+
+#user_email {
+  z-index: 3;
+}
+
+// Get rid of yellow highlighting for autocomplete
 .form-control[readonly] {
   -webkit-box-shadow: 0 0 0px 1000px #eee inset !important;
 }
 
 .form-control {
   -webkit-box-shadow: 0 0 0px 1000px white inset !important;
-}
-
-// Get rid of blue input glow
-
-input.form-control, input.form-control:focus {
-  box-shadow: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  -moz-transition: none;
-  -webkit-transition: none;
 }
 
 // Columns for checkboxes
