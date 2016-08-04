@@ -1,58 +1,63 @@
-<div class="home-container">
-  <%= simple_form_for @user, url: '/submit', html: { id: 'main-form' } do |f| %>
+<%= simple_form_for @user, url: '/submit', html: { id: 'main-form' } do |f| %>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="left-pane col-md-5">
+          <div class="left-pane-contents">
+            <div class="header">
+              CourseAlert
+            </div>
 
-    <div class="left-pane">
-      <div class="left-pane-contents">
-        <div class="header">
-          CourseAlert
+            <div class="form-section email-section">
+              <div class="form-group email required user_email">
+                <div class="input-group">
+                  <%= f.input_field :email,
+                    label: false,
+                    placeholder: 'name@example.com',
+                    class: 'form-control',
+                    required: ''
+                  %>
+
+                  <span class="input-group-btn">
+                    <button id="login-button" type="button" class="next btn btn-default">Login/Create</button>
+                    <input id="submit-button" type="submit" class="btn btn-success">
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div class="form-section email-section">
-          <div class="form-group email required user_email">
-            <div class="input-group">
-              <%= f.input_field :email,
-                label: false,
-                placeholder: 'name@example.com',
-                class: 'form-control',
-                required: ''
-              %>
+      <div class="col-md-7">
+        <div class="right-pane">
+          <div class="right-pane-contents">
+            <div class="form-section subject-settings-section">
+              <% UrlHelper.get_departments.each do |school| %>
+                <div class="col-1">
+                  <%= f.input :pending_subject_settings,
+                    collection: Hash[school['departments'].select { |d| d['col'] == 1 }.collect { |d| ["#{d['name']} (#{d['code']})", "#{d['code']}"] }],
+                    label: school['school'],
+                    input_html: { multiple: true },
+                    required: false,
+                    as: :check_boxes
+                  %>
+                </div>
 
-              <span class="input-group-btn">
-                <button id="login-button" type="button" class="next btn btn-default">Login/Create</button>
-                <input id="submit-button" type="submit" class="btn btn-success">
-              </span>
+                <div class="col-2">
+                  <%= f.input :pending_subject_settings,
+                    collection: Hash[school['departments'].select { |d| d['col'] == 2 }.collect { |d| ["#{d['name']} (#{d['code']})", "#{d['code']}"] }],
+                    label: false,
+                    input_html: { multiple: true },
+                    required: false,
+                    as: :check_boxes
+                  %>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="right-pane">
-      <div class="right-pane-contents">
-        <div class="form-section subject-settings-section">
-          <% UrlHelper.get_departments.each do |school| %>
-            <div class="col-1">
-              <%= f.input :pending_subject_settings,
-                collection: Hash[school['departments'].select { |d| d['col'] == 1 }.collect { |d| ["#{d['name']} (#{d['code']})", "#{d['code']}"] }],
-                label: school['school'],
-                input_html: { multiple: true },
-                required: false,
-                as: :check_boxes
-              %>
-            </div>
-
-            <div class="col-2">
-              <%= f.input :pending_subject_settings,
-                collection: Hash[school['departments'].select { |d| d['col'] == 2 }.collect { |d| ["#{d['name']} (#{d['code']})", "#{d['code']}"] }],
-                label: false,
-                input_html: { multiple: true },
-                required: false,
-                as: :check_boxes
-              %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
