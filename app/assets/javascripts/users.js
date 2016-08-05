@@ -55,7 +55,7 @@ $(document).on('turbolinks:load', function() {
   function tryToLogin() {
     if ($mainForm.parsley().validate({group: 'email'})) {
       // Returns border for input field to original color
-      $userEmail.css('border-color', '#ccc;');
+      $userEmail.css('border-color', '#ccc');
 
       // Remove login button
       $loginButton.remove();

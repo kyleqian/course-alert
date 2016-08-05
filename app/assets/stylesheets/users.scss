@@ -2,16 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,700';
 
 // INSTRUCTIONS
 .instructions {
-  margin-top: 30px;
+  margin-top: 10%;
   font-family: 'Avenir', 'Helvtica', sans-serif;
 }
 
 .instr-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
 }
 
@@ -23,25 +23,41 @@
   padding-left: 1.5em;
 }
 
+.instr-body {
+  font-size: 13px;
+}
+
 // HOME
 
 @media (min-width: 992px) {
   .left-pane {
     position: fixed !important;
-    margin-top: 7%;
+    margin-top: 10%;
   }
 }
 
 .subject-settings-section {
   font-family: 'Avenir', 'Helvtica', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .header {
-  font-size: 48px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
+  font-size: 60px;
+  font-family: 'Open Sans', sans-serif;
   text-align: center;
+}
+
+.header1 {
+  font-weight: 300;
+}
+
+.header2 {
+  font-weight: 700;
+  color: #b11b1b;
+}
+
+.color {
+  color: #820000;
 }
 
 .right-pane {
@@ -54,7 +70,7 @@
 }
 
 .left-pane-contents {
-  width: 70%;
+  width: 75%;
 }
 
 .right-pane-contents {
