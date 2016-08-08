@@ -57,15 +57,15 @@ $(document).on('turbolinks:load', function() {
       // Returns border for input field to original color
       $userEmail.css('border-color', '#ccc');
 
-      // Remove login button
-      $loginButton.remove();
-
       // Enable selecting buttons
       $selectAllButton.removeAttr('disabled');
       $deselectAllButton.removeAttr('disabled');
 
       // Disable email field
       $userEmail.attr('readonly', '');
+
+      // Disable login button
+      $loginButton.attr('disabled', '');
 
       // Check email with AJAX
       var email = $userEmail.val();
@@ -87,6 +87,9 @@ $(document).on('turbolinks:load', function() {
           $this.removeAttr('disabled');
           $this.prop('checked', false);
         });
+
+        // Un-greys right pane
+        $('.right-pane-contents').css('opacity', '1');
         
         // Checks checkboxes based on user settings
         for (var i = 0; i < data.length; i++) {
@@ -95,7 +98,6 @@ $(document).on('turbolinks:load', function() {
 
         // Enable submit button
         $submitButton.removeAttr('disabled');
-        $submitButton.show();
       }
     }, 'json');
   }

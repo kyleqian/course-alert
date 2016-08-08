@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     email = params[:email].strip
     @user = User.find_by(email: email)
     
-    load_departments = @user ? JSON.parse(@user.subject_settings) : []
+    load_departments = @user.blank? ? [] : JSON.parse(@user.subject_settings)
     render json: load_departments.to_json
   end
 

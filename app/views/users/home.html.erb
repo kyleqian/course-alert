@@ -13,14 +13,13 @@
                 <div class="input-group">
                   <%= f.input_field :email,
                     label: false,
-                    placeholder: 'your@email.com',
+                    placeholder: 'email@stanford.edu',
                     class: 'form-control',
                     required: ''
                   %>
 
                   <span class="input-group-btn">
-                    <button id="submit-btn" type="submit" class="btn btn-success">Subscribe!</button>
-                    <button id="login-btn" type="button" class="btn btn-default">Signup/Login</button>
+                    <button id="login-btn" type="button" class="btn btn-default">Login</button>
                   </span>
                 </div>
               </div>
@@ -32,8 +31,8 @@
                   what do
                 </div>
                 <div class="instr-body">
-                  Sign up to get emails whenever new courses are added to ExploreCourses.</p>
-                  <p>Alerts go out once or twice a week, and only if I see anything new from your list. </p>
+                  <p>Sign up to get emails whenever new courses are added to ExploreCourses.</p>
+                  <p>Alerts go out once or twice a week, and only if I see anything new from your list.</p>
                 </div>
               </div>
 
@@ -43,9 +42,9 @@
                 </div>
                 <div class="instr-body">
                   <ol>
-                    <li>Signup/Login with email (either new or previously used)</li>
+                    <li>Login with email (loads previous settings if any)</li>
                     <li>Check off departments you'd want updates from</li>
-                    <li>Click "Subscribe"</li>
+                    <li>Click "Submit"</li>
                     <li>Confirm changes by clicking on email link</li>
                   </ol>
                 </div>
@@ -62,6 +61,7 @@
             <div class="select-buttons">
               <button id="select-all-btn" type="button" class="btn btn-default">Select All</button>
               <button id="deselect-all-btn" type="button" class="btn btn-default">Deselect All</button>
+              <button id="submit-btn" type="submit" class="btn btn-success">Submit!</button>
             </div>
             <div class="form-section subject-settings-section">
               <% UrlHelper.get_departments.each do |school| %>
