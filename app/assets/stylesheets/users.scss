@@ -32,7 +32,11 @@
 @media (min-width: 992px) {
   .left-pane {
     position: fixed !important;
-    margin-top: 10%;
+    margin-top: 10% !important;
+  }
+
+  .right-pane {
+    margin-left: 0% !important;
   }
 
   .right-pane-contents {
@@ -40,8 +44,8 @@
   }
 
   .select-buttons {
-    position: fixed;
-    padding-left: 3%;
+    position: fixed !important;
+    padding-left: 3% !important;
     text-align: initial !important;
   }
 }
@@ -83,6 +87,7 @@
 .right-pane {
   margin-top: 3%;
   margin-bottom: 3%;
+  margin-left: 7%;
 }
 
 .left-pane-contents, .right-pane-contents {
