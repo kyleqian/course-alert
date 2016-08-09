@@ -56,13 +56,13 @@
       </div>
 
       <div class="col-md-7">
+        <div class="select-buttons">
+          <button id="select-all-btn" type="button" class="btn btn-default">Select All</button>
+          <button id="deselect-all-btn" type="button" class="btn btn-default">Deselect All</button>
+          <button id="submit-btn" type="submit" class="btn btn-success">Submit!</button>
+        </div>
         <div class="right-pane">
           <div class="right-pane-contents">
-            <div class="select-buttons">
-              <button id="select-all-btn" type="button" class="btn btn-default">Select All</button>
-              <button id="deselect-all-btn" type="button" class="btn btn-default">Deselect All</button>
-              <button id="submit-btn" type="submit" class="btn btn-success">Submit!</button>
-            </div>
             <div class="form-section subject-settings-section">
               <% UrlHelper.get_departments.each do |school| %>
                 <div class="col-1">

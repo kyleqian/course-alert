@@ -34,6 +34,26 @@
     position: fixed !important;
     margin-top: 10%;
   }
+
+  .right-pane-contents {
+    margin-top: 60px !important; // clears the fixed bar
+  }
+
+  .select-buttons {
+    position: fixed;
+    padding-left: 3%;
+    text-align: initial !important;
+  }
+}
+
+.select-buttons {
+  width: inherit;
+  z-index: 9;
+  background-color: white;
+  opacity: 1 !important;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  text-align: center;
 }
 
 .subject-settings-section {
@@ -76,10 +96,6 @@
 .right-pane-contents {
   opacity: 0.5;
   width: 90%;
-}
-
-.select-buttons {
-  margin-bottom: 15px;
 }
 
 #user_email {
