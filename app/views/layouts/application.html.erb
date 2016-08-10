@@ -3,6 +3,7 @@
   <head>
     <title>CourseAlert</title>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -23,11 +24,12 @@
     <%= yield %>
     <script type="text/javascript">
       window.doorbellOptions = {
-          appKey: 'G3SB9uE5hf24lX4xzbeOFLGxXnAi72IcbOOR9zdPgNDuV9TmwNHGNEmghN90zNes'
+          appKey: 'G3SB9uE5hf24lX4xzbeOFLGxXnAi72IcbOOR9zdPgNDuV9TmwNHGNEmghN90zNes',
+          hideEmail: true
       };
       (function(w, d, t) {
           var hasLoaded = false;
-          function l() { if (hasLoaded) { return; } hasLoaded = true; window.doorbellOptions.windowLoaded = true; window.doorbellOptions.hideEmail = true; var g = d.createElement(t);g.id = 'doorbellScript';g.type = 'text/javascript';g.async = true;g.src = 'https://embed.doorbell.io/button/4153?t='+(new Date().getTime());(d.getElementsByTagName('head')[0]||d.getElementsByTagName('body')[0]).appendChild(g); }
+          function l() { if (hasLoaded) { return; } hasLoaded = true; window.doorbellOptions.windowLoaded = true; var g = d.createElement(t);g.id = 'doorbellScript';g.type = 'text/javascript';g.async = true;g.src = 'https://embed.doorbell.io/button/4153?t='+(new Date().getTime());(d.getElementsByTagName('head')[0]||d.getElementsByTagName('body')[0]).appendChild(g); }
           if (w.attachEvent) { w.attachEvent('onload', l); } else if (w.addEventListener) { w.addEventListener('load', l, false); } else { l(); }
           if (d.readyState == 'complete') { l(); }
       }(window, document, 'script'));

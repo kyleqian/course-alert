@@ -50,23 +50,36 @@
   }
 
   .right-pane-contents {
-    margin-top: 60px !important; // clears the fixed bar
+    margin-top: 70px !important; // clears the fixed bar
+    margin-bottom: 0px !important; // unclears the bottom bar
   }
 
   .select-buttons {
-    position: fixed !important;
     padding-left: 3% !important;
     text-align: initial !important;
+    bottom: initial !important;
+    width: inherit !important;
+    padding-bottom: 1% !important;
+  }
+
+  #doorbell-button {
+    display: initial !important;
   }
 }
 
+#doorbell-button {
+  display: none;
+}
+
 .select-buttons {
-  width: inherit;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
   z-index: 9;
   background-color: white;
   opacity: 1 !important;
-  padding-top: 1%;
-  padding-bottom: 1%;
+  padding-top: 2%;
+  padding-bottom: 2%;
   text-align: center;
 }
 
@@ -109,8 +122,9 @@
 }
 
 .right-pane-contents {
-  opacity: 0.5;
+  opacity: 0.4;
   width: 90%;
+  margin-bottom: 50px; // clears the bottom bar
 }
 
 #user_email {
