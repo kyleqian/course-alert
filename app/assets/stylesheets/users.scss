@@ -65,6 +65,18 @@
   #doorbell-button {
     display: initial !important;
   }
+
+  #mobile-bar {
+    display: none !important;
+  }
+}
+
+#mobile-bar {
+  margin: 0 auto;
+  width: 80%;
+  border: 2px solid #ddd;
+  margin-top: 35px;
+  margin-bottom: 35px;
 }
 
 #doorbell-button {
@@ -101,10 +113,6 @@
 .header2 {
   font-weight: 700;
   color: #b11b1b;
-}
-
-.color {
-  color: #820000;
 }
 
 .right-pane {
