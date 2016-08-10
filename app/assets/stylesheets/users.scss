@@ -6,7 +6,7 @@
 
 // INSTRUCTIONS
 .instructions {
-  margin-top: 10%;
+  margin-top: 0%;
   font-family: 'Avenir', 'Helvtica', sans-serif;
 }
 
@@ -29,7 +29,17 @@
 
 // HOME
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
+  .header {
+    font-size: 48px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .instructions {
+    margin-top: 5% !important;
+  }
+
   .left-pane {
     position: fixed !important;
     margin-top: 10% !important;
