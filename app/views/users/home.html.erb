@@ -65,10 +65,11 @@
           <div class="right-pane-contents">
             <div class="form-section subject-settings-section">
               <% UrlHelper.get_departments.each do |school| %>
+                <div class="school-label"><strong><%= school['school'] %></strong></div>
                 <div class="col-1">
                   <%= f.input :pending_subject_settings,
                     collection: Hash[school['departments'].select { |d| d['col'] == 1 }.collect { |d| ["#{d['name']} (#{d['code']})", "#{d['code']}"] }],
-                    label: school['school'],
+                    label: false,
                     input_html: { multiple: true },
                     required: false,
                     as: :check_boxes
