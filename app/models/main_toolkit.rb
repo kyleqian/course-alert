@@ -25,7 +25,10 @@ class MainToolkit
     raise "Need at least 1 diff!" unless all_diffs.length >= 1
 
     latest_diff_path = all_diffs[0]['path']
-    return {start_date: latest_diff_path.split("/")[-1].split(".")[0].split('~')[2].split('T')[0], end_date: latest_diff_path.split("/")[-1].split(".")[0].split('~')[4].split('T')[0], latest_diff: JSON.parse(@dp_client.get_file(latest_diff_path))}
+    start_date = latest_diff_path.split("/")[-1].split(".")[0].split('~')[2].split('T')[0]
+    end_date = latest_diff_path.split("/")[-1].split(".")[0].split('~')[4].split('T')[0]
+
+    return {start_date: Date.parse(start_date).strftime("%-m/%-d/%Y"), end_date: Date.parse(end_date).strftime("%-m/%-d/%Y"), latest_diff: JSON.parse(@dp_client.get_file(latest_diff_path))}
   end
 
   # Saves latest EC XML into Dropbox
