@@ -1,4 +1,4 @@
-namespace :ca do
+namespace :ac do
   task download: :environment do
     toolkit = MainToolkit.new
     toolkit.download_latest_xml()
