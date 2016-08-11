@@ -80,10 +80,27 @@ module UrlHelper
     # print tiny
     # pyperclip.copy(tiny)
   end
+
+  COURSES_TO_CHECK = [
+    'CS 448B'
+  ]
+
+  def self.check_courses
+    results = []
+    COURSES_TO_CHECK.each do |course_name|
+      html = Net::HTTP.get(URI("https://explorecourses.stanford.edu/search?view=catalog&filter-coursestatus-Active=on&page=0&catalog=&academicYear=&q=#{course_name.delete(' ')}"))
+      nodes = Nokogiri::HTML(html).css('.courseInfo')
+      nodes.each do |n|
+        if n.at_css('.courseNumber').text.upcase.strip == course_name.upcase + ':'
+          results << n.at_css('.sectionDetails').text.strip.gsub(/[\t\n\r]+/, '')
+          break
+        end
+      end
+    end
+    MainMailer.send_check_courses(results).deliver_now
+  end
 end
 
-
-
 if __FILE__ == $0
-  UrlHelper.urlMaker
+  UrlHelper.check_courses
 end

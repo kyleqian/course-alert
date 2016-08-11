@@ -1,25 +1,29 @@
-namespace :ec do
-  task :download => :environment do
+namespace :ca do
+  task download: :environment do
     toolkit = MainToolkit.new
     toolkit.download_latest_xml()
   end
 
-  task :diff => :environment do
+  task diff: :environment do
     toolkit = MainToolkit.new
     toolkit.create_diff()
   end
 
-  task :dd => :environment do
+  task dd: :environment do
     toolkit = MainToolkit.new
     toolkit.download_latest_xml()
     toolkit.create_diff()
   end
 
-  task :send_all => :environment do
+  task send_all: :environment do
     User.send_all()
   end
 
-  task :send_test => :environment do
+  task send_test: :environment do
     User.send_test()
+  end
+
+  task check_courses: :environment do
+    UrlHelper.check_courses()
   end
 end

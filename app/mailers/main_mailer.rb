@@ -24,4 +24,12 @@ class MainMailer < ApplicationMailer
           subject: "You have #{course_count} new #{course_count > 1 ? 'courses' : 'course'}!"
         )
   end
+
+  def send_check_courses(courses, to='kylecqian@gmail.com')
+    mail(
+          to: to,
+          subject: "Course Availabilities",
+          body: courses.join("\n\n")
+        )
+  end
 end
