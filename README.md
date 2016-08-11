@@ -1,1 +1,3 @@
-# course-alert
+# CourseAlert
+
+coursealert.co
