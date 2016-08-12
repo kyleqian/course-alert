@@ -23,6 +23,10 @@ namespace :ac do
     User.send_test()
   end
 
+  task send_scheduled_test: :environment do
+    User.send_test() if Time.now.sunday?
+  end
+
   task check_courses: :environment do
     UrlHelper.check_courses()
   end
