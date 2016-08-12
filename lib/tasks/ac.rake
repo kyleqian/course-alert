@@ -30,4 +30,10 @@ namespace :ac do
   task check_courses: :environment do
     UrlHelper.check_courses()
   end
+
+  task users: :environment do
+    emails = User.pluck(:email)
+    puts emails.join("\n")
+    puts "\n#{emails.length} users"
+  end
 end
