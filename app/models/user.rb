@@ -34,7 +34,6 @@ class User < ApplicationRecord
     self.subscribed = false
     self.verified = false
     self.subject_settings = '[]'
-    self.pending_subject_settings = '[]'
   end
 
   def validate_email
