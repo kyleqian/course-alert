@@ -1,9 +1,9 @@
 Greetings from CourseAlert!
 <br><br>
 <% if @user.subscribed %>
-  Someone has changed your settings on coursealert.co! Please click to confirm:
+  You're receiving this message because you've just changed your settings on coursealert.co! Please click to confirm:
 <% else %>
-  Someone has subscribed this email to coursealert.co! Please click to confirm:
+  You're receiving this message because you've just subscribed to coursealert.co! Please click to confirm:
 <% end %>
 <br>
 <%= link_to nil, controller: :users, action: :update, pid: @user.public_id %>
