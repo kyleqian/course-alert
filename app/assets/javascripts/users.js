@@ -11,11 +11,17 @@ $(document).on('turbolinks:load', function() {
   var $submitButton = $('#submit-btn');
   var $userEmail = $('#user_email');
   var $checkBoxes = $('.subject-settings-section input');
+  var $checkBoxLabels = $('.subject-settings-section label');
   $selectAllButton.attr('disabled', '');
   $deselectAllButton.attr('disabled', '');
   $userEmail.attr('data-parsley-errors-messages-disabled', '');
   $userEmail.attr('data-parsley-group', 'email');
   $submitButton.attr('disabled', '');
+
+  // All checkbox labels have default cursor initially
+  $checkBoxLabels.each(function() {
+    $(this).css('cursor', 'not-allowed');
+  });
 
   // Displays greyed out checkboxes
   $checkBoxes.each(function() {
@@ -90,7 +96,12 @@ $(document).on('turbolinks:load', function() {
 
         // Un-greys right pane
         $('.right-pane-contents').css('opacity', '1');
-        
+
+        // Pointers are back for checkbox labels
+        $checkBoxLabels.each(function() {
+          $(this).css('cursor', 'pointer');
+        });
+
         // Checks checkboxes based on user settings
         for (var i = 0; i < data.length; i++) {
           $('input[value="' + data[i] + '"]').prop('checked', true);
