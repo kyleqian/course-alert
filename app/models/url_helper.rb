@@ -45,6 +45,7 @@ module UrlHelper
     JSON.parse(File.read('app/models/departments~2016-07-29T11-29-17-07-00.json'))
   end
 
+  # No longer used
   def self.get_default_departments
     default_departments = []
     self.get_departments.each do |school|

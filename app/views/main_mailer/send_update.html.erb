@@ -5,7 +5,7 @@ Here are some fresh courses that match your settings, added between <strong><%= 
   <p>
     <u><%= "#{i + 1}) " %><strong><%= "#{course['department']} #{course['code']}" %></strong><%= ": #{course['title']}" %></u>
     <br>
-    <%= " (#{course['quarters'].join(', ').strip})" %>
+    <%= " [#{course['quarters'].join(', ').strip}] #{'[' + course['gers'].join(', ').strip + ']' if !course['gers'].empty?}" %>
     <br>
     <%= "#{course['description']}" %>
     <br><br>

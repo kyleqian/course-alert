@@ -148,7 +148,7 @@ class MainToolkit
     parsed_course[:description] = description.empty? ? nil : description
 
     gers = (c > 'gers').text.strip
-    parsed_course[:gers] = gers.empty? ? nil : gers
+    parsed_course[:gers] = gers.empty? ? [] : gers.split(', ')
 
     quarters = Set.new
     sections = []

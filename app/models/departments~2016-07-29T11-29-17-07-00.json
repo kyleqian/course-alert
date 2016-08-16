@@ -1,61 +1,109 @@
 [
   {
-    "school": "School of Earth, Energy and Environmental Sciences",
+    "school": "Undergraduate General Education Requirements",
     "departments": [
       {
-        "name": "Earth, Energy, and Environmental Sciences",
-        "code": "EARTH",
+        "name": "Aesthetic and Interpretive Inquiry",
+        "code": "WAY-A-II",
         "col": 1,
-        "default": true
+        "default": false
       },
       {
-        "name": "Earth Systems",
-        "code": "EARTHSYS",
+        "name": "Applied Quantitative Reasoning",
+        "code": "WAY-AQR",
         "col": 1,
-        "default": true
+        "default": false
       },
       {
-        "name": "Earth, Energy, & Environmental Sciences",
-        "code": "EEES",
+        "name": "Creative Expression",
+        "code": "WAY-CE",
         "col": 1,
-        "default": true
+        "default": false
       },
       {
-        "name": "Energy Resources Engineering",
-        "code": "ENERGY",
+        "name": "Engaging Diversity",
+        "code": "WAY-ED",
         "col": 1,
-        "default": true
+        "default": false
       },
       {
-        "name": "Environment and Resources",
-        "code": "ENVRES",
-        "col": 1,
-        "default": true
-      },
-      {
-        "name": "Earth System Science",
-        "code": "ESS",
+        "name": "Ethical Reasoning",
+        "code": "WAY-ER",
         "col": 2,
-        "default": true
+        "default": false
       },
       {
-        "name": "Geological Sciences",
-        "code": "GS",
+        "name": "Formal Reasoning",
+        "code": "WAY-FR",
         "col": 2,
-        "default": true
+        "default": false
       },
       {
-        "name": "Geophysics",
-        "code": "GEOPHYS",
+        "name": "Social Inquiry",
+        "code": "WAY-SI",
         "col": 2,
-        "default": true
+        "default": false
       },
       {
-        "name": "Woods Institute for the Environment",
-        "code": "ENVRINST",
+        "name": "Scientific Method and Analysis",
+        "code": "WAY-SMA",
         "col": 2,
-        "default": true
+        "default": false
       }
+      // {
+      //   "name": "Engineering and Applied Sciences",
+      //   "code": "DB-EngrAppSci",
+      //   "col": 2,
+      //   "default": false
+      // },
+      // {
+      //   "name": "Humanities",
+      //   "code": "DB-Hum",
+      //   "col": 2,
+      //   "default": false
+      // },
+      // {
+      //   "name": "Mathematics",
+      //   "code": "DB-Math",
+      //   "col": 2,
+      //   "default": false
+      // },
+      // {
+      //   "name": "Natural Sciences",
+      //   "code": "DB-NatSci",
+      //   "col": 2,
+      //   "default": false
+      // },
+      // {
+      //   "name": "Social Sciences",
+      //   "code": "DB-SocSci",
+      //   "col": 2,
+      //   "default": false
+      // },
+      // {
+      //   "name": "American Cultures",
+      //   "code": "EC-AmerCul",
+      //   "col": 2,
+      //   "default": false
+      // },
+      // {
+      //   "name": "Global Community",
+      //   "code": "EC-GlobalCom",
+      //   "col": 2,
+      //   "default": false
+      // },
+      // {
+      //   "name": "Gender Studies",
+      //   "code": "EC-Gender",
+      //   "col": 2,
+      //   "default": false
+      // },
+      // {
+      //   "name": "Ethical Reasoning",
+      //   "code": "EC-EthicReas",
+      //   "col": 2,
+      //   "default": false
+      // }
     ]
   },
   {
@@ -669,6 +717,65 @@
       {
         "name": "Urban Studies",
         "code": "URBANST",
+        "col": 2,
+        "default": true
+      }
+    ]
+  },
+  {
+    "school": "School of Earth, Energy and Environmental Sciences",
+    "departments": [
+      {
+        "name": "Earth, Energy, and Environmental Sciences",
+        "code": "EARTH",
+        "col": 1,
+        "default": true
+      },
+      {
+        "name": "Earth Systems",
+        "code": "EARTHSYS",
+        "col": 1,
+        "default": true
+      },
+      {
+        "name": "Earth, Energy, & Environmental Sciences",
+        "code": "EEES",
+        "col": 1,
+        "default": true
+      },
+      {
+        "name": "Energy Resources Engineering",
+        "code": "ENERGY",
+        "col": 1,
+        "default": true
+      },
+      {
+        "name": "Environment and Resources",
+        "code": "ENVRES",
+        "col": 1,
+        "default": true
+      },
+      {
+        "name": "Earth System Science",
+        "code": "ESS",
+        "col": 2,
+        "default": true
+      },
+      {
+        "name": "Geological Sciences",
+        "code": "GS",
+        "col": 2,
+        "default": true
+      },
+      {
+        "name": "Geophysics",
+        "code": "GEOPHYS",
+        "col": 2,
+        "default": true
+      },
+      {
+        "name": "Woods Institute for the Environment",
+        "code": "ENVRINST",
         "col": 2,
         "default": true
       }
