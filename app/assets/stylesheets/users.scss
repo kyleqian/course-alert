@@ -35,6 +35,10 @@
 }
 
 @media (min-width: 768px) {
+  .header {
+    margin-top: 0px !important;
+  }
+
   .left-pane {
     position: fixed !important;
     margin-top: 10% !important;
@@ -114,6 +118,7 @@
 }
 
 .header {
+  margin-top: 20px;
   font-size: 60px;
   font-family: 'Open Sans', sans-serif;
   text-align: center;
@@ -139,7 +144,7 @@
 }
 
 .left-pane-contents {
-  width: 85%;
+  width: 90%;
 }
 
 .right-pane-contents {
