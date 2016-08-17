@@ -1,15 +1,17 @@
-Greetings from CourseAlert!
-<br><br>
-<% if @user.subscribed %>
-  You're receiving this message because you've just changed your settings on coursealert.co! Please click to confirm:
-<% else %>
-  You're receiving this message because you've just subscribed to coursealert.co! Please click to confirm:
-<% end %>
-<br>
-<%= link_to nil, controller: :users, action: :update, pid: @user.public_id %>
-<br><br>
-<% if @user.subscribed %>
-  I'll let you know if anything new comes up!
-<% else %>
-  Thanks for subscribing!
-<% end %>
+<div style="font-family: 'Helvetica', sans-serif">
+  Greetings from CourseAlert!
+  <br><br>
+  <% if @user.subscribed %>
+    You're receiving this message because you've just changed your settings on coursealert.co! Please click to confirm:
+  <% else %>
+    You're receiving this message because you've just subscribed to coursealert.co! Please click to confirm:
+  <% end %>
+  <br>
+  <%= link_to nil, controller: :users, action: :update, pid: @user.public_id %>
+  <br><br>
+  <% if @user.subscribed %>
+    I'll let you know if anything new comes up!
+  <% else %>
+    Thanks for subscribing!
+  <% end %>
+</div>

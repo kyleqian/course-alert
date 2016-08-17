@@ -1,18 +1,20 @@
-<p>Greetings from CourseAlert!
-<br>
-Here are some fresh courses that match your settings, added between <strong><%= @start_date %></strong> and <strong><%= @end_date %></strong>:</p>
-<% @user_diff.each_with_index do |course, i| %>
-  <p>
-    <u><%= "#{i + 1}) " %><strong><%= "#{course['department']} #{course['code']}" %></strong><%= ": #{course['title']}" %></u>
-    <br>
-    <%= " [#{course['quarters'].join(', ').strip}] #{'[' + course['gers'].join(', ').strip + ']' if !course['gers'].empty?}" %>
-    <br>
-    <%= "#{course['description']}" %>
-    <br><br>
-  </p>
-<% end %>
---------
-<br><br>
-Make changes to your subscription list by logging in at <%= link_to nil, 'coursealert.co' %>. 
-<br>
-To unsubscribe, <%= link_to 'click here', controller: :users, action: :unsubscribe, pid: @user.public_id %>.
+<div style="font-family: 'Helvetica', sans-serif">
+  <p>Greetings from CourseAlert!
+  <br>
+  Here are some fresh courses that match your settings, added between <strong><%= @start_date %></strong> and <strong><%= @end_date %></strong>:</p>
+  <% @user_diff.each_with_index do |course, i| %>
+    <p>
+      <u><%= "#{i + 1}) " %><strong><%= "#{course['department']} #{course['code']}" %></strong><%= ": #{course['title']}" %></u>
+      <br>
+      <%= " [#{course['quarters'].join(', ').strip}] #{'[' + course['gers'].join(', ').strip + ']' if !course['gers'].empty?}" %>
+      <br>
+      <%= "#{course['description']}" %>
+      <br><br>
+    </p>
+  <% end %>
+  --------
+  <br><br>
+  Make changes to your subscription list by logging in at <%= link_to nil, 'coursealert.co' %>.
+  <br>
+  To unsubscribe, <%= link_to 'click here', controller: :users, action: :unsubscribe, pid: @user.public_id %>.
+</div>
