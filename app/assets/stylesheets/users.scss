@@ -47,6 +47,7 @@
   .right-pane-contents {
     margin-top: 90px !important; // clears the fixed bar
     margin-bottom: 0px !important; // unclears the bottom bar
+    width: 90% !important;
   }
 
   .select-buttons {
@@ -139,7 +140,6 @@
 
 .right-pane-contents {
   opacity: 0.2;
-  width: 90%;
   margin-bottom: 80px; // clears the bottom bar
 }
 
