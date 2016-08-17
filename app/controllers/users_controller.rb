@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.find_by(email: email)
     
     load_departments = @user.blank? ? [] : JSON.parse(@user.subject_settings)
-    render json: load_departments.to_json
+    render json: {checkboxes: load_departments, new: @user.blank?}.to_json
   end
 
   def submit

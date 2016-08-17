@@ -6,7 +6,6 @@
 
 // INSTRUCTIONS
 .instructions {
-  margin-top: 0%;
   font-family: 'Avenir', 'Helvtica', sans-serif;
 }
 
@@ -36,10 +35,6 @@
 }
 
 @media (min-width: 768px) {
-  .instructions {
-    margin-top: 5% !important;
-  }
-
   .left-pane {
     position: fixed !important;
     margin-top: 10% !important;
@@ -50,7 +45,7 @@
   }
 
   .right-pane-contents {
-    margin-top: 65px !important; // clears the fixed bar
+    margin-top: 90px !important; // clears the fixed bar
     margin-bottom: 0px !important; // unclears the bottom bar
   }
 
@@ -69,6 +64,19 @@
   #mobile-bar {
     display: none !important;
   }
+}
+
+#login-status {
+  padding-top: 5px;
+  opacity: 0.4;
+}
+
+#new {
+  color: green;
+}
+
+#existing {
+  color: #b11b1b;
 }
 
 #mobile-bar {
@@ -132,7 +140,7 @@
 .right-pane-contents {
   opacity: 0.2;
   width: 90%;
-  margin-bottom: 60px; // clears the bottom bar
+  margin-bottom: 80px; // clears the bottom bar
 }
 
 #user_email {

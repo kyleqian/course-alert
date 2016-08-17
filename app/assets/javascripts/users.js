@@ -1,8 +1,8 @@
 $(document).on('turbolinks:load', function() {
 
-  //////////////////////////////////
-  // PARSLEY MULTISTEP VALIDATION //
-  //////////////////////////////////
+  ////////////////////////
+  // PARSLEY VALIDATION //
+  ////////////////////////
 
   var $mainForm = $('#main-form');
   var $loginButton = $('#login-btn');
@@ -12,6 +12,7 @@ $(document).on('turbolinks:load', function() {
   var $userEmail = $('#user_email');
   var $checkBoxes = $('.subject-settings-section input');
   var $checkBoxLabels = $('.subject-settings-section label');
+  var $loginStatus = $('#login-status');
   $selectAllButton.attr('disabled', '');
   $deselectAllButton.attr('disabled', '');
   $userEmail.attr('data-parsley-errors-messages-disabled', '');
@@ -85,7 +86,12 @@ $(document).on('turbolinks:load', function() {
   function enableCheckboxes(email) {
     // POST to get user settings, or default settings if new user
     $.post('/login', {'email': email}, function(data, status) {
-      if (status == "success" && Array.isArray(data)) {
+      if (status == "success" && data !== null && typeof(data) === "object" && "checkboxes" in data && "new" in data) {
+
+        // Shows login status
+        $loginStatus.show();
+        $loginStatus.html(data["new"] ? 'This is a <strong id="new">NEW</strong> email. Welcome!' : 'This is an <strong id="existing">EXISTING</strong> email. Welcome back!');
+        $loginStatus.css('opacity', 1);
 
         // Enables checkboxes and unchecks all of them
         $checkBoxes.each(function() {
@@ -103,8 +109,8 @@ $(document).on('turbolinks:load', function() {
         });
 
         // Checks checkboxes based on user settings
-        for (var i = 0; i < data.length; i++) {
-          $('input[value="' + data[i] + '"]').prop('checked', true);
+        for (var i = 0; i < data["checkboxes"].length; i++) {
+          $('input[value="' + data["checkboxes"][i] + '"]').prop('checked', true);
         }
 
         // Enable submit button
