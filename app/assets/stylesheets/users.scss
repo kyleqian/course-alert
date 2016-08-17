@@ -44,6 +44,10 @@
     margin-left: 0% !important;
   }
 
+  .left-pane-contents {
+    width: 75% !important;
+  }
+
   .right-pane-contents {
     margin-top: 90px !important; // clears the fixed bar
     margin-bottom: 0px !important; // unclears the bottom bar
@@ -135,7 +139,7 @@
 }
 
 .left-pane-contents {
-  width: 75%;
+  width: 85%;
 }
 
 .right-pane-contents {
