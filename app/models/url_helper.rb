@@ -83,11 +83,13 @@ module UrlHelper
   end
 
   COURSES_TO_CHECK = [
-    'CS 448B'
   ]
 
   def self.check_courses
     results = []
+
+    return if COURSES_TO_CHECK.empty?
+    
     COURSES_TO_CHECK.each do |course_name|
       html = Net::HTTP.get(URI("https://explorecourses.stanford.edu/search?view=catalog&filter-coursestatus-Active=on&page=0&catalog=&academicYear=&q=#{course_name.delete(' ')}"))
       nodes = Nokogiri::HTML(html).css('.courseInfo')
