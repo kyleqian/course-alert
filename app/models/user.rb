@@ -62,7 +62,12 @@ class User < ApplicationRecord
       user_settings = JSON.parse(u.subject_settings)
       user_diff = latest_diff.select { |course| user_settings.include? course['department'] }
       if user_diff.length > 0
-        MainMailer.send_update(u, user_diff, start_date, end_date).deliver_now
+        begin
+          MainMailer.send_update(u, user_diff, start_date, end_date).deliver_now
+        rescue => e
+          logger.fatal("SEND_ALL ERROR!\nUSER ID: #{u.id}\nMESSAGE: #{e.message}\n\n")
+          break
+        end
       end
     end
   end
