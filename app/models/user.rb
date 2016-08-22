@@ -48,14 +48,16 @@ class User < ApplicationRecord
     errors.add(:pending_subject_settings, "is not valid") unless JSON.parse(pending_subject_settings).is_a? Array
   end
 
-  def self.send_all
+  def self.send_all(from_id=0)
     toolkit = MainToolkit.new
     response = toolkit.get_latest_diff()
     latest_diff = response[:latest_diff]
     start_date = response[:start_date]
     end_date = response[:end_date]
-    User.all.each do |u|
+    User.where("id >= ?", from_id).each do |u|
       next unless u.verified and u.subscribed
+
+      sleep(60) # Zohomail...
 
       user_settings = JSON.parse(u.subject_settings)
       user_diff = latest_diff.select { |course| user_settings.include? course['department'] }
