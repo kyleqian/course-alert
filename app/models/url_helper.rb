@@ -83,6 +83,7 @@ module UrlHelper
   end
 
   COURSES_TO_CHECK = [
+    "ENGLISH 9CE|2016-2017 Autumn"
   ]
 
   def self.check_courses
@@ -90,13 +91,21 @@ module UrlHelper
 
     return if COURSES_TO_CHECK.empty?
     
-    COURSES_TO_CHECK.each do |course_name|
+    COURSES_TO_CHECK.each do |c|
+      course_name = c.split('|')[0]
+      course_term = c.split('|')[1]
       html = Net::HTTP.get(URI("https://explorecourses.stanford.edu/search?view=catalog&filter-coursestatus-Active=on&page=0&catalog=&academicYear=&q=#{course_name.delete(' ')}"))
       nodes = Nokogiri::HTML(html).css('.courseInfo')
       nodes.each do |n|
-        if n.at_css('.courseNumber').text.upcase.strip == course_name.upcase + ':'
-          results << n.at_css('.sectionDetails').text.strip.gsub(/[\t\n\r]+/, '')
-          break
+        if n.at_css('.courseNumber').text.upcase.strip == course_name + ':'
+          n.css('.sectionContainer').each do |sc|
+            if (sc > '.sectionContainerTerm').text.strip == course_term
+              sc.css('.sectionDetails').each do |sd|
+                results << sd.text.strip.gsub(/[\t\n\r]+/, '')
+              end
+              break
+            end
+          end
         end
       end
     end
