@@ -32,4 +32,8 @@ class MainMailer < ApplicationMailer
           body: courses.join("\n\n")
         )
   end
+
+  def check_rate(count=0, to='kylecqian@gmail.com')
+    mail(to: to, subject: "Testing #{count}", body: "Testing rate")
+  end
 end

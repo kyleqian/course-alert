@@ -36,4 +36,11 @@ namespace :ac do
     puts emails.join("\n")
     puts "\n#{emails.length} users"
   end
+
+  task check_rate: :environment do
+    User.count.times do |i|
+      MainMailer.check_rate(i + 1).deliver_now
+      sleep(30)
+    end
+  end
 end
