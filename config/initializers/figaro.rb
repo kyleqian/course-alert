@@ -1,1 +1,1 @@
-Figaro.require_keys("dp_key", "zh_user", "zh_pass")
+Figaro.require_keys("dp_key", "g_user", "g_pass")

@@ -31,11 +31,11 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.smtp_settings = {
-    address:              'smtp.zoho.com',
-    domain:               'coursealert.co',
+    address:              'smtp.gmail.com',
+    domain:               'gmail.com',
     port:                 465,
-    user_name:            Figaro.env.zh_user,
-    password:             Figaro.env.zh_pass,
+    user_name:            Figaro.env.g_user,
+    password:             Figaro.env.g_pass,
     authentication:       :plain,
     ssl:                  true,
     tls:                  true,
