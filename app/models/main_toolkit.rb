@@ -41,6 +41,7 @@ class MainToolkit
     puts "Writing to Dropbox..."
     filename = "courses~#{Time.now.getlocal('-08:00').iso8601.split('.')[0].gsub(':', '-')}"
     @dp_client.put_file("xmls/#{filename}.xml", xml_file)
+    @dp_client.put_file("xmls/weekly_xmls/#{filename}.xml", xml_file) if Time.now.sunday?
     puts "Done writing!"
   end
 
@@ -109,14 +110,11 @@ class MainToolkit
     puts "Finished moving!"
   end
 
-  ##############################
-  private
-  ##############################
-
   # Returns hash with 2 latest XMLs and their names
-  def get_two_latest_xmls_from_dp
+  def get_two_latest_xmls_from_dp(weekly_xmls=false)
     puts "Getting XMLs from Dropbox..."
-    all_xmls = @dp_client.metadata('/xmls')['contents'].select { |x| !x['is_dir'] }.sort_by! { |x| Time.parse(x['client_mtime']) }.reverse!
+    directory = weekly_xmls ? '/xmls/weekly_xmls' : '/xmls'
+    all_xmls = @dp_client.metadata(directory)['contents'].select { |x| !x['is_dir'] }.sort_by! { |x| Time.parse(x['client_mtime']) }.reverse!
 
     raise "Need at least 2 XMLs!" unless all_xmls.length >= 2
 
@@ -125,6 +123,12 @@ class MainToolkit
 
     return {curr_xml_name: curr_xml_path.split("/")[-1].split(".")[0], curr_xml: @dp_client.get_file(curr_xml_path), prev_xml_name: prev_xml_path.split("/")[-1].split(".")[0], prev_xml: @dp_client.get_file(prev_xml_path)}
   end
+
+
+  ##############################
+  private
+  ##############################
+
 
   # Argument: Nokogiri-parsed <course> Node
   # Return: <course> parsed as a hash

@@ -15,16 +15,21 @@ namespace :ac do
     toolkit.create_diff()
   end
 
+  task weekly_diff: :environment do
+    return unless Time.now.sunday?
+
+    toolkit = MainToolkit.new
+    response = toolkit.get_two_latest_xmls_from_dp(weekly_xmls=true)
+    toolkit.create_diff(response[:prev_xml_name], response[:curr_xml_name])
+    User.send_test()
+  end
+
   task send_all: :environment do
     User.send_all()
   end
 
   task send_test: :environment do
     User.send_test()
-  end
-
-  task send_scheduled_test: :environment do
-    User.send_test() if Time.now.sunday?
   end
 
   task check_courses: :environment do
