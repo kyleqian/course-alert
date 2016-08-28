@@ -57,7 +57,7 @@ class User < ApplicationRecord
     User.where("id >= ?", from_id).each do |u|
       next unless u.verified and u.subscribed
 
-      sleep(60) # Zohomail...
+      sleep(10)
 
       user_settings = JSON.parse(u.subject_settings)
       user_diff = latest_diff.select { |course| user_settings.include? course['department'] }
