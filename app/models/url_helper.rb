@@ -83,7 +83,6 @@ module UrlHelper
   end
 
   COURSES_TO_CHECK = [
-    "ENGLISH 9CE|2016-2017 Autumn",
     "PSYCH 30|2016-2017 Autumn"
   ]
 
