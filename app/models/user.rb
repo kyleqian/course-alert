@@ -54,7 +54,7 @@ class User < ApplicationRecord
     latest_diff = response[:latest_diff]
     start_date = response[:start_date]
     end_date = response[:end_date]
-    User.where("id >= ?", from_id).each do |u|
+    User.where("id >= ?", from_id).order(id: :asc).each do |u|
       next unless u.verified and u.subscribed
 
       sleep(10)
