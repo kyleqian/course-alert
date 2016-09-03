@@ -83,7 +83,6 @@ module UrlHelper
   end
 
   COURSES_TO_CHECK = [
-    "PSYCH 30|2016-2017 Autumn"
   ]
 
   def self.check_courses
