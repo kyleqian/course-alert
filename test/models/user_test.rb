@@ -11,6 +11,7 @@
 #  created_at               :datetime         not null
 #  updated_at               :datetime         not null
 #  pending_subject_settings :text
+#  last_update_sent         :datetime
 #
 
 require 'test_helper'

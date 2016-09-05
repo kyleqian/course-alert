@@ -11,6 +11,7 @@
 #  created_at               :datetime         not null
 #  updated_at               :datetime         not null
 #  pending_subject_settings :text
+#  last_update_sent         :datetime
 #
 
 class User < ApplicationRecord
@@ -57,7 +58,7 @@ class User < ApplicationRecord
     User.where("id >= ?", from_id).order(id: :asc).each do |u|
       next unless u.verified and u.subscribed
 
-      sleep(10)
+      sleep(5)
 
       user_settings = JSON.parse(u.subject_settings)
       user_diff = latest_diff.select { |course| user_settings.include? course['department'] }
@@ -66,6 +67,10 @@ class User < ApplicationRecord
           MainMailer.send_update(u, user_diff, start_date, end_date).deliver_now
         rescue => e
           logger.fatal("SEND_ALL ERROR!\nUSER ID: #{u.id}\nMESSAGE: #{e.message}\n\n")
+          break
+        else
+          u.last_update_sent = DateTime.now
+          u.save!
           break
         end
       end
