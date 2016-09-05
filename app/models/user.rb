@@ -71,7 +71,6 @@ class User < ApplicationRecord
         else
           u.last_update_sent = DateTime.now
           u.save!
-          break
         end
       end
     end
