@@ -66,7 +66,7 @@ class User < ApplicationRecord
         begin
           MainMailer.send_update(u, user_diff, start_date, end_date).deliver_now
         rescue => e
-          logger.fatal("SEND_ALL ERROR!\nUSER ID: #{u.id}\nMESSAGE: #{e.message}\n\n")
+          puts e
           break
         else
           u.last_update_sent = DateTime.now
