@@ -49,6 +49,33 @@ class User < ApplicationRecord
     errors.add(:pending_subject_settings, "is not valid") unless JSON.parse(pending_subject_settings).is_a? Array
   end
 
+  def self.FIX
+    toolkit = MainToolkit.new
+    response = toolkit.get_latest_diff()
+    latest_diff = response[:latest_diff]
+    start_date = response[:start_date]
+    end_date = response[:end_date]
+    User.where("last_update_sent < ? or last_update_sent IS NULL", DateTime.now - 5.days).order(id: :asc).each do |u|
+      next unless u.verified and u.subscribed
+
+      sleep(2)
+
+      user_settings = JSON.parse(u.subject_settings)
+      user_diff = latest_diff.select { |course| user_settings.include? course['department'] }
+      if user_diff.length > 0
+        begin
+          MainMailer.send_update(u, user_diff, start_date, end_date).deliver_now
+        rescue => e
+          logger.fatal("SEND_ALL ERROR!\nUSER ID: #{u.id}\nMESSAGE: #{e.message}\n\n")
+          break
+        else
+          u.last_update_sent = DateTime.now
+          u.save!
+        end
+      end
+    end
+  end
+
   def self.send_all(from_id=0)
     toolkit = MainToolkit.new
     response = toolkit.get_latest_diff()
