@@ -37,7 +37,7 @@ namespace :ac do
   end
 
   task users: :environment do
-    emails = User.pluck(:email)
+    emails = User.order(id: :asc).pluck(:email)
     puts emails.join("\n")
     puts "\n#{emails.length} users"
   end
