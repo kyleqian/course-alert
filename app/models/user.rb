@@ -116,4 +116,11 @@ class User < ApplicationRecord
       MainMailer.send_update(u, user_diff, start_date, end_date).deliver_now
     end
   end
+
+  def self.send_daily
+    toolkit = MainToolkit.new
+    response = toolkit.get_latest_diff(daily_diff=true)
+    latest_diff = response[:latest_diff]
+    MainMailer.send_daily(JSON.pretty_generate(latest_diff)).deliver_now
+  end
 end

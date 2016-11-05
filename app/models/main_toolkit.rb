@@ -19,10 +19,11 @@ class MainToolkit
     @dp_client = DropboxClient.new(Figaro.env.dp_key)
   end
 
-  def get_latest_diff
-    all_diffs = @dp_client.metadata('/diffs')['contents'].select { |x| !x['is_dir'] }.sort_by! { |x| Time.parse(x['client_mtime']) }.reverse!
+  def get_latest_diff(daily_diff=false)
+    path = daily_diff ? '/diffs/daily_diffs' : '/diffs'
+    all_diffs = @dp_client.metadata(path)['contents'].select { |x| !x['is_dir'] }.sort_by! { |x| Time.parse(x['client_mtime']) }.reverse!
 
-    raise "Need at least 1 diff!" unless all_diffs.length >= 1
+    raise "Need at least 1 diff!" unless all_diffs.length > 0
 
     latest_diff_path = all_diffs[0]['path']
     start_date = latest_diff_path.split("/")[-1].split(".")[0].split('~')[2].split('T')[0]

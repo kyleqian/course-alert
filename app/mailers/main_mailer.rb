@@ -33,6 +33,14 @@ class MainMailer < ApplicationMailer
         )
   end
 
+  def send_daily(diff)
+    mail(
+          to: 'kylecqian@gmail.com',
+          subject: "Daily diff",
+          body: diff
+        )
+  end
+
   def check_rate(count=0, to='kylecqian@gmail.com')
     mail(to: to, subject: "Testing #{count}", body: "Testing rate")
   end
