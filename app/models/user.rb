@@ -103,6 +103,7 @@ class User < ApplicationRecord
     end
   end
 
+  # Sends test weekly diff
   def self.send_test(email='kylecqian@gmail.com')
     toolkit = MainToolkit.new
     response = toolkit.get_latest_diff()
@@ -117,6 +118,7 @@ class User < ApplicationRecord
     end
   end
 
+  # Sends diff of the two last daily XMLs
   def self.send_daily
     toolkit = MainToolkit.new
     response = toolkit.get_latest_diff(daily_diff=true)

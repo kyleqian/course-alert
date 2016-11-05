@@ -1,4 +1,5 @@
 namespace :ac do
+
   task download: :environment do
     toolkit = MainToolkit.new
     toolkit.download_latest_xml()
@@ -9,6 +10,8 @@ namespace :ac do
     toolkit.create_diff()
   end
 
+  # Runs daily
+  # Creates daily diff and sends to email
   task dd: :environment do
     toolkit = MainToolkit.new
     toolkit.download_latest_xml()
@@ -16,6 +19,8 @@ namespace :ac do
     User.send_daily()
   end
 
+  # Runs weekly
+  # Creates weekly diff and sends to email
   task weekly_diff: :environment do
     return unless Time.now.sunday?
 

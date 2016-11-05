@@ -7,6 +7,7 @@ require 'json'
 class MainToolkit
   include UrlHelper
 
+  # Enumerates quarters
   QUARTERS_HASH = {
     "AUTUMN" => 1,
     "FALL" => 1,
@@ -19,6 +20,9 @@ class MainToolkit
     @dp_client = DropboxClient.new(Figaro.env.dp_key)
   end
 
+  # Retrieves lastest diff from Dropbox (stored as JSON)
+  # 'daily_diff' determines whether to retrieve the daily diff or the weekly diff
+  # Returns a hash of start/end dates, and the diff in hash form
   def get_latest_diff(daily_diff=false)
     path = daily_diff ? '/diffs/daily_diffs' : '/diffs'
     all_diffs = @dp_client.metadata(path)['contents'].select { |x| !x['is_dir'] }.sort_by! { |x| Time.parse(x['client_mtime']) }.reverse!
@@ -32,7 +36,7 @@ class MainToolkit
     return {start_date: Date.parse(start_date).strftime("%-m/%-d/%Y"), end_date: Date.parse(end_date).strftime("%-m/%-d/%Y"), latest_diff: JSON.parse(@dp_client.get_file(latest_diff_path))}
   end
 
-  # Saves latest EC XML into Dropbox
+  # Saves latest ExploreCourses XML into Dropbox as-is
   def download_latest_xml
     uri = URI(UrlHelper.get_url)
 
@@ -112,6 +116,7 @@ class MainToolkit
   end
 
   # Returns hash with 2 latest XMLs and their names
+  # (To be used for diff'ing)
   def get_two_latest_xmls_from_dp(weekly_xmls=false)
     puts "Getting XMLs from Dropbox..."
     directory = weekly_xmls ? '/xmls/weekly_xmls' : '/xmls'
