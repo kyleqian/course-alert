@@ -13,6 +13,7 @@ namespace :ac do
     toolkit = MainToolkit.new
     toolkit.download_latest_xml()
     toolkit.create_diff()
+    User.send_daily()
   end
 
   task weekly_diff: :environment do
