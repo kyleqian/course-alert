@@ -30,24 +30,36 @@ namespace :ac do
     User.send_test()
   end
 
+  # Sends email to all users with weekly digest
   task send_all: :environment do
     User.send_all()
   end
 
+  # Sends one test email with weekly digest
   task send_test: :environment do
     User.send_test()
   end
 
+  # Checks specific courses
   task check_courses: :environment do
     UrlHelper.check_courses()
   end
 
+  # Prints users
   task users: :environment do
     emails = User.order(id: :asc).pluck(:email)
     puts emails.join("\n")
     puts "\n#{emails.length} users"
   end
 
+  # Prints unsubscribed USERS
+  task unsubbed: :environment do
+    emails = User.where(verified: true, subscribed: false).order(id: :asc).pluck(:email)
+    puts emails.join("\n")
+    puts "\n#{emails.length} unsubbed users"
+  end
+
+  # Tests email rates
   task check_rate: :environment do
     User.count.times do |i|
       MainMailer.check_rate(i + 1).deliver_now
