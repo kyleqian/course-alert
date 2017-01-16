@@ -46,14 +46,14 @@ namespace :ac do
   end
 
   # Prints users
-  task users: :environment do
+  task check_users: :environment do
     emails = User.order(id: :asc).pluck(:email)
     puts emails.join("\n")
     puts "\n#{emails.length} users"
   end
 
   # Prints unsubscribed USERS
-  task unsubbed: :environment do
+  task check_unsubbed: :environment do
     emails = User.where(verified: true, subscribed: false).order(id: :asc).pluck(:email)
     puts emails.join("\n")
     puts "\n#{emails.length} unsubbed users"
