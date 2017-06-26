@@ -42,7 +42,7 @@ module UrlHelper
   QUERY = "all+courses"
 
   def self.get_departments
-    JSON.parse(File.read('app/models/departments~2016-07-29T11-29-17-07-00.json'))
+    JSON.parse(File.read('app/models/department_jsons/departments~2017-06-25T21-11-45-08-00.json'))
   end
 
   # No longer used
