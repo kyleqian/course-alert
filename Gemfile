@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Nokogiri for XML parsing
 gem 'nokogiri'
-gem 'dropbox-sdk'
+gem 'dropbox_api'
 # YAML configuration file
 gem 'figaro'
 gem 'annotate'
