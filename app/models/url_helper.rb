@@ -38,7 +38,7 @@ module UrlHelper
     "Spring",
     # "Summer"
   ]
-  ACADEMIC_YEAR = "20162017"
+  ACADEMIC_YEAR = "20172018"
   QUERY = "all+courses"
 
   def self.get_departments
